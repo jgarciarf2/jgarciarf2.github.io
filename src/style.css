@@ -21,20 +21,51 @@ body {
 }
 
 .CV__header {
-  text-align: center;
+  display: flex;
+  justify-content: space-between;
   background-color: #0078d7;
   color: #fff;
   padding: 20px 10px;
   border-bottom: 4px solid #005a9e;
 }
 
-.CV__header a {
-  background-color: #fff;
-  color: #005a9e;
-  padding: 10px;
-  border: 4px solid #fff;
-  text-decoration: none;
+.photo_header {
+  display: flex;
+  align-items: center;
   border-radius: 10px;
+  background-color: #005a9e;
+  padding: 10px;
+  margin-right: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.photo-header img {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+}
+
+.contact {
+  display: flex;
+  justify-content: left;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.CV__header a {
+  color: #0078d7;
+  background-color: #fff;
+  text-decoration: none;
+  border-radius: 50%;
+  padding: 10px;
+}
+
+.CV__header a:hover {
+  background-color: #000;
+  color: #fff;
+  padding: 10px;
+  border: 4px solid #000;
+  transition: all 0.3s ease;
 }
 
 .CV__name {

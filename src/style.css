@@ -79,10 +79,9 @@ body {
 }
 
 .CV__contact {
-  margin: 10px 0 0;
-  font-size: 0.9rem;
-  padding: 5px 0;
-  margin-bottom: 20px;
+  padding: 0;
+  margin: 0;
+  font-size: 12px;
 }
 
 .CV_body {

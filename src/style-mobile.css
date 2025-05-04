@@ -1,0 +1,7 @@
+@media (max-width: 600px) {
+  .CV_header {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+}

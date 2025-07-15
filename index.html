@@ -6,149 +6,481 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./src/style.css">
     <link rel="stylesheet" href="./src/style-mobile.css">
-    <title>CV - Juan Fernando Garcia</title>
+    <title>Juan Fernando Garcia - Portfolio</title>
     <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/149/149071.png">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
-    <div class="cv-container">
-        <!-- Header with name and title -->
-        <header class="cv-header">
-            <h1 class="name">JUAN FERNANDO GARCIA</h1>
-            <p class="title">Ingeniero en Sistemas y computación</p>
-        </header>
-
-        <!-- Main content with sidebar and main sections -->
-        <div class="cv-content">
-            <!-- Left sidebar -->
-            <aside class="sidebar">
-                <!-- Contact section -->
-                <section class="contact-section">
-                    <h2 class="section-title">CONTACT</h2>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <span>+57 3023217019</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <span>jgarciarf216@gmail.com</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Manizales, Colombia</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fab fa-github"></i>
-                        <span>jgarciarf2.github.io</span>
-                    </div>
-                </section>
-
-                <!-- Education section -->
-                <section class="education-section">
-                    <h2 class="section-title">EDUCACIÓN</h2>
-                    <div class="education-item">
-                        <h3>Universidad de Caldas</h3>
-                        <p class="period">2022-2027</p>
-                        <p>Ingeniería en sistemas y computación</p>
-                    </div>
-                </section>
-
-                <!-- Languages section -->
-                <section class="languages-section">
-                    <h2 class="section-title">IDIOMAS</h2>
-                    <ul class="languages-list">
-                        <li>Inglés B1 (B2 In-Progress)</li>
-                        <li>Español Avanzado</li>
-                    </ul>
-                </section>
-
-                <!-- Skills section -->
-                <section class="skills-section">
-                    <h2 class="section-title">HABILIDADES</h2>
-                    <ul class="skills-list">
-                        <li>Conocimiento del mercado</li>
-                        <li>Habilidades de comunicación</li>
-                        <li>Habilidades de negociación</li>
-                        <li>Habilidades para la resolución de problemas</li>
-                        <li>Habilidades de organización y gestión del tiempo</li>
-                    </ul>
-                </section>
-            </aside>
-
-            <!-- Main content area -->
-            <main class="main-content">
-                <!-- Profile section -->
-                <section class="profile-section">
-                    <h2 class="section-title">PERFIL</h2>
-                    <p>Soy un estudiante de ingeniería en sistemas y computación en la Universidad de Caldas, Colombia.
-                        Actualmente me encuentro cursando los últimos semestres del pregrado, soy una persona proactiva,
-                        con gran interés en aprender nuevas tecnologías y desarrollo de proyectos. Me considero una
-                        persona demasiado responsable y comprometida con mis deberes.</p>
-                </section>
-
-                <!-- Work experience section -->
-                <section class="experience-section">
-                    <h2 class="section-title">EXPERIENCIA LABORAL</h2>
-                    <div class="experience-item">
-                        <h3 class="job-title">DESARROLLADOR DE SOFTWARE</h3>
-                        <div class="company-info">
-                            <h4>EBS-WebDev</h4>
-                            <p class="period">2025 - 6 Meses</p>
-                        </div>
-                        <ul class="job-duties">
-                            <li>Desarrollador Web</li>
-                            <li>Creación de Widgets</li>
-                            <li>Solución de Bugs</li>
-                            <li>Desarrollador Plug-in</li>
-                            <li>Mantenimiento Páginas Web</li>
-                            <li>Administración Base de Datos</li>
-                            <li>Desarrollador Backend</li>
-                            <li>Desarrollo y Consumo API's</li>
-                        </ul>
-                    </div>
-                </section>
-
-                <!-- Technologies section -->
-                <section class="technologies-section">
-                    <h2 class="section-title">TECNOLOGÍAS</h2>
-                    <div class="tech-grid">
-                        <div class="tech-column">
-                            <ul>
-                                <li>Angular CLI</li>
-                                <li>React</li>
-                                <li>JavaScript</li>
-                                <li>TypeScript</li>
-                                <li>Django</li>
-                                <li>WordPress</li>
-                                <li>HTML Avanzado</li>
-                                <li>CSS Avanzado</li>
-                                <li>AdonisJS</li>
-                                <li>NodeJS</li>
-                                <li>Git</li>
-                            </ul>
-                        </div>
-                        <div class="tech-column">
-                            <ul>
-                                <li>Python</li>
-                                <li>Java</li>
-                                <li>SpringBoot</li>
-                                <li>PHP</li>
-                                <li>OracleDB</li>
-                                <li>SQL/PL-SQL</li>
-                                <li>MongoDB</li>
-                                <li>Flask</li>
-                                <li>FastAPI</li>
-                                <li>Laravel</li>
-                                <li>Github</li>
-                            </ul>
-                        </div>
-                    </div>
-                </section>
-            </main>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h3>JFG</h3>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">Sobre mí</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#projects" class="nav-link">Proyectos</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#skills" class="nav-link">Habilidades</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contacto</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
         </div>
-    </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content" data-aos="fade-up">
+                <h1 class="hero-title">Juan Fernando Garcia</h1>
+                <p class="hero-subtitle">Desarrollador Full Stack & Ingeniero en Sistemas</p>
+                <p class="hero-description">
+                    Apasionado por crear soluciones tecnológicas innovadoras y experiencias digitales excepcionales
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">Ver Proyectos</a>
+                    <a href="#contact" class="btn btn-secondary">Contactame</a>
+                </div>
+                <div class="hero-social">
+                    <a href="mailto:jgarciarf216@gmail.com" class="social-link">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="https://github.com/jgarciarf2" class="social-link" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/jgarciarf2" class="social-link" target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://wa.me/573023217019" class="social-link" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image" data-aos="fade-left">
+                <div class="profile-card">
+                    <img src="./resources/unnamed.jpg" alt="Juan Fernando Garcia" class="profile-img">
+                    <div class="card-content">
+                        <h3>Desarrollador</h3>
+                        <p>Full Stack Developer</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Sobre Mí</h2>
+            <div class="about-content">
+                <div class="about-text" data-aos="fade-right">
+                    <p>
+                        Soy un estudiante de ingeniería en sistemas y computación en la Universidad de Caldas, Colombia.
+                        Actualmente me encuentro cursando los últimos semestres del pregrado, soy una persona proactiva,
+                        con gran interés en aprender nuevas tecnologías y desarrollo de proyectos.
+                    </p>
+                    <p>
+                        Me considero una persona responsable y comprometida con mis deberes. Mi experiencia en
+                        desarrollo
+                        de software incluye tanto frontend como backend, con especial enfoque en tecnologías web
+                        modernas.
+                    </p>
+                    <div class="stats">
+                        <div class="stat-item">
+                            <h3>6+</h3>
+                            <p>Meses de Experiencia</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>10+</h3>
+                            <p>Proyectos Completados</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>15+</h3>
+                            <p>Tecnologías</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-info" data-aos="fade-left">
+                    <div class="info-card">
+                        <h3>Experiencia</h3>
+                        <div class="experience-item">
+                            <h4>Desarrollador de Software</h4>
+                            <p class="company">EBS-WebDev</p>
+                            <p class="period">2025 - 6 Meses</p>
+                            <ul>
+                                <li>Desarrollo Web Frontend/Backend</li>
+                                <li>Creación de Widgets personalizados</li>
+                                <li>Mantenimiento de aplicaciones web</li>
+                                <li>Desarrollo y consumo de APIs REST</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <h3>Educación</h3>
+                        <div class="education-item">
+                            <h4>Universidad de Caldas</h4>
+                            <p class="degree">Ingeniería en Sistemas y Computación</p>
+                            <p class="period">2022 - 2027</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Mis Proyectos</h2>
+            <div class="projects-filter" data-aos="fade-up">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="web">Web</button>
+                <button class="filter-btn" data-filter="mobile">Mobile</button>
+                <button class="filter-btn" data-filter="backend">Backend</button>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card" data-category="web" data-aos="fade-up">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/400x250/3498db/ffffff?text=E-Commerce+Platform"
+                            alt="E-Commerce Platform">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Plataforma E-Commerce</h3>
+                        <p>Aplicación web completa para comercio electrónico con carrito de compras, sistema de pagos y
+                            administración.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="web" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/400x250/e74c3c/ffffff?text=Task+Manager"
+                            alt="Task Manager">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Gestor de Tareas</h3>
+                        <p>Aplicación web para gestión de proyectos y tareas con funcionalidades de colaboración en
+                            tiempo real.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Angular</span>
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">Firebase</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="backend" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/400x250/2ecc71/ffffff?text=REST+API" alt="REST API">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>API RESTful</h3>
+                        <p>API robusta para gestión de usuarios, autenticación JWT y operaciones CRUD con documentación
+                            completa.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Django</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="mobile" data-aos="fade-up" data-aos-delay="300">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/400x250/9b59b6/ffffff?text=Weather+App" alt="Weather App">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>App del Clima</h3>
+                        <p>Aplicación móvil que muestra información meteorológica en tiempo real con geolocalización.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React Native</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">API</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="web" data-aos="fade-up" data-aos-delay="400">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/400x250/f39c12/ffffff?text=Portfolio+Web"
+                            alt="Portfolio Web">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Portfolio Personal</h3>
+                        <p>Sitio web personal interactivo y responsivo para mostrar proyectos y habilidades
+                            profesionales.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="backend" data-aos="fade-up" data-aos-delay="500">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/400x250/1abc9c/ffffff?text=Microservices"
+                            alt="Microservices">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Arquitectura Microservicios</h3>
+                        <p>Sistema distribuido con microservicios para gestión de inventario y facturación empresarial.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Java</span>
+                            <span class="tech-tag">Spring Boot</span>
+                            <span class="tech-tag">Docker</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Tecnologías & Habilidades</h2>
+            <div class="skills-content">
+                <div class="skills-category" data-aos="fade-right">
+                    <h3>Frontend</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <i class="fab fa-html5"></i>
+                            <span>HTML5</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-css3-alt"></i>
+                            <span>CSS3</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-js-square"></i>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-react"></i>
+                            <span>React</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-angular"></i>
+                            <span>Angular</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-bootstrap"></i>
+                            <span>Bootstrap</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skills-category" data-aos="fade-up">
+                    <h3>Backend</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <i class="fab fa-node-js"></i>
+                            <span>Node.js</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-python"></i>
+                            <span>Python</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-java"></i>
+                            <span>Java</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-server"></i>
+                            <span>Django</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-leaf"></i>
+                            <span>Spring Boot</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-php"></i>
+                            <span>PHP</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skills-category" data-aos="fade-left">
+                    <h3>Bases de Datos</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <i class="fas fa-database"></i>
+                            <span>MySQL</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-database"></i>
+                            <span>PostgreSQL</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-database"></i>
+                            <span>MongoDB</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-database"></i>
+                            <span>Oracle DB</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-code"></i>
+                            <span>PL/SQL</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-fire"></i>
+                            <span>Firebase</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Contacto</h2>
+            <div class="contact-content">
+                <div class="contact-info" data-aos="fade-right">
+                    <h3>¡Hablemos!</h3>
+                    <p>¿Tienes un proyecto en mente? ¿Buscas un desarrollador comprometido? ¡Me encantaría escuchar de
+                        ti!</p>
+
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>jgarciarf216@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Teléfono</h4>
+                                <p>+57 302 321 7019</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Ubicación</h4>
+                                <p>Manizales, Colombia</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="contact-form" data-aos="fade-left">
+                    <div class="form-group">
+                        <input type="text" placeholder="Tu Nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Tu Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Asunto" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Tu Mensaje" rows="6" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-text">
+                    <p>&copy; 2025 Juan Fernando Garcia. Todos los derechos reservados.</p>
+                </div>
+                <div class="footer-social">
+                    <a href="mailto:jgarciarf216@gmail.com" class="social-link">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="https://github.com/jgarciarf2" class="social-link" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/jgarciarf2" class="social-link" target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://wa.me/573023217019" class="social-link" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./src/main.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
 </body>
 
 </html>

@@ -451,6 +451,41 @@ document.addEventListener('DOMContentLoaded', function () {
     lazyImages.forEach(img => imageObserver.observe(img));
 });
 
+// Logo loading optimization
+document.addEventListener('DOMContentLoaded', function () {
+    const logoImg = document.querySelector('.logo-img');
+
+    if (logoImg) {
+        // Preload logo for better performance
+        logoImg.addEventListener('load', function () {
+            this.style.opacity = '1';
+        });
+
+        // Add error handling for logo
+        logoImg.addEventListener('error', function () {
+            console.warn('Logo failed to load, falling back to text');
+            this.style.display = 'none';
+
+            // Create fallback text
+            const fallbackText = document.createElement('h3');
+            fallbackText.textContent = 'ArfDev';
+            fallbackText.style.color = '#3498db';
+            fallbackText.style.fontWeight = '700';
+            fallbackText.style.fontSize = '1.5rem';
+            this.parentNode.appendChild(fallbackText);
+        });
+
+        // Set initial opacity for smooth loading
+        logoImg.style.opacity = '0';
+        logoImg.style.transition = 'opacity 0.3s ease';
+
+        // If logo is already cached
+        if (logoImg.complete) {
+            logoImg.style.opacity = '1';
+        }
+    }
+});
+
 // Add CSS animations
 const style = document.createElement('style');
 style.textContent = `

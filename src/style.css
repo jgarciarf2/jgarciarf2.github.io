@@ -49,6 +49,23 @@ body {
   height: 70px;
 }
 
+.nav-logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  height: 100px;
+  width: auto;
+  transition: all 0.3s ease;
+  filter: brightness(1);
+}
+
+.logo-img:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
 .nav-logo h3 {
   color: #3498db;
   font-weight: 700;
@@ -122,7 +139,7 @@ body {
 /* Hero Section */
 .hero {
   min-height: 100vh;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #2c3e50 0%, #3498db 50%, #2980b9 100%);
   display: flex;
   align-items: center;
   position: relative;
@@ -137,7 +154,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="rgba(255,255,255,0.1)" points="0,1000 1000,0 1000,1000"/></svg>');
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="rgba(255,255,255,0.05)" points="0,1000 1000,0 1000,1000"/></svg>');
   background-size: cover;
 }
 
@@ -161,7 +178,7 @@ body {
   font-size: 3.5rem;
   font-weight: 700;
   margin-bottom: 15px;
-  background: linear-gradient(45deg, #fff, #a8edea);
+  background: linear-gradient(45deg, #fff, #e8f4fd);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -303,6 +320,8 @@ body {
 .about {
   padding: 100px 0;
   background: #f8f9fa;
+  position: relative;
+  z-index: 10;
 }
 
 .about-content {
@@ -401,6 +420,8 @@ body {
 .projects {
   padding: 100px 0;
   background: white;
+  position: relative;
+  z-index: 10;
 }
 
 .projects-filter {
@@ -634,6 +655,8 @@ body {
 .skills {
   padding: 100px 0;
   background: #f8f9fa;
+  position: relative;
+  z-index: 10;
 }
 
 .skills-content {
@@ -694,6 +717,8 @@ body {
 .contact {
   padding: 100px 0;
   background: white;
+  position: relative;
+  z-index: 10;
 }
 
 .contact-content {
@@ -807,6 +832,8 @@ body {
   background: #2c3e50;
   color: white;
   padding: 30px 0;
+  position: relative;
+  z-index: 10;
 }
 
 .footer-content {
@@ -1333,6 +1360,10 @@ body.menu-open .nav-menu {
     width: 40px;
     height: 40px;
   }
+
+  .logo-img {
+    height: 30px;
+  }
 }
 
 /* Hamburger menu animation */
@@ -1442,6 +1473,18 @@ textarea {
   .social-link {
     min-height: 44px;
     min-width: 44px;
+  }
+
+  .logo-img {
+    height: 35px;
+  }
+
+  .nav-container {
+    height: 60px;
+  }
+
+  .nav-menu {
+    top: 60px;
   }
 }
 

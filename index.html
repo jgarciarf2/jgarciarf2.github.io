@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,70 +13,142 @@
 </head>
 
 <body>
-    <div class="CV">
-        <div class="CV__container">
-            <div class="CV__header">
-                <div class="info-header">
-                    <h1 class="CV__name">Juan Fernando Garcia</h1>
-                    <p class="CV__title">Ingeniero en sistemas y computación</p>
-                    <p class="CV_info">Email: jgarciarf216@gmail.com </p>
-                    <p class="CV__info">Teléfono: +57 3023217019 </p>
-                    <p class="CV_info">Github: jgarciarf2 </p>
-                    <div class=" contact">
-                        <a href="mailto: jgarciarf216@gmail.com ">
-                            <i class="fa-regular fa-envelope"></i>
-                        </a>
-                        <a href="http://wa.me/573023217019">
-                            <i class="fa-brands fa-whatsapp"></i>
-                        </a>
+    <div class="cv-container">
+        <!-- Header with name and title -->
+        <header class="cv-header">
+            <h1 class="name">JUAN FERNANDO GARCIA</h1>
+            <p class="title">Ingeniero en Sistemas y computación</p>
+        </header>
+
+        <!-- Main content with sidebar and main sections -->
+        <div class="cv-content">
+            <!-- Left sidebar -->
+            <aside class="sidebar">
+                <!-- Contact section -->
+                <section class="contact-section">
+                    <h2 class="section-title">CONTACT</h2>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+57 3023217019</span>
                     </div>
-                </div>
-                <div class=" photo-header">
-                    <img src="./resources/unnamed.jpg" alt="Foto de perfil" class="CV__photo">
-                </div>
-            </div>
-            <div class="CV_body">
-                <div class="CV__section">
-                    <h2 class="CV__section-title">Quién soy</h2>
-                    <p class="CV__section-content">Soy un ingeniero de en sistemas y computación apasionado por la
-                        tecnología y el
-                        desarrollo de software. Me gusta aprender
-                        nuevas tecnologías y mejorar mis habilidades constantemente. Me considero una persona
-                        proactiva,
-                        responsable y comprometida con mi trabajo.</p>
-                    </p>
-                </div>
-                <div class="CV__section">
-                    <h2 class="CV__section-title">Experiencia</h2>
-                    <p class="CV__section-content">Desarrollador de Software - Desarrollador Frontend -
-                        Desarrollador
-                        Backend - EBSWebDev (6 meses)</p>
-                </div>
-                <div class="CV__section">
-                    <h2 class="CV__section-title">Educación</h2>
-                    <p class="CV__section-content">Ingeniero en Sistemas y Computación - Universidad de Caldas</p>
-                </div>
-                <div class="CV__section">
-                    <h2 class="CV__section-title">Idiomas</h2>
-                    <p class="CV__section-content">Español - Avanzado</p>
-                    <p class="CV__section-content">Inglés - Avanzado</p>
-                </div>
-                <div class="CV__section">
-                    <h2 class="CV__section-title">Conocimientos</h2>
-                    <ul class="CV__skills-list">
-                        <li>HTML, CSS, JavaScript</li>
-                        <li>React, Angular CLI</li>
-                        <li>Bootstrap, Tailwind CSS</li>
-                        <li>Node.js, Adonis.js</li>
-                        <li>Python, Django, Flask</li>
-                        <li>Java, SpringBoot Security</li>
-                        <li>Git, GitHub</li>
-                        <li>SQL, MongoDB, PLSQL</li>
-                        <li>Creación y control de APIs</li>
-                        <li>Desarrollo de aplicaciones web</li>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>jgarciarf216@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Manizales, Colombia</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-github"></i>
+                        <span>jgarciarf2.github.io</span>
+                    </div>
+                </section>
+
+                <!-- Education section -->
+                <section class="education-section">
+                    <h2 class="section-title">EDUCACIÓN</h2>
+                    <div class="education-item">
+                        <h3>Universidad de Caldas</h3>
+                        <p class="period">2022-2027</p>
+                        <p>Ingeniería en sistemas y computación</p>
+                    </div>
+                </section>
+
+                <!-- Languages section -->
+                <section class="languages-section">
+                    <h2 class="section-title">IDIOMAS</h2>
+                    <ul class="languages-list">
+                        <li>Inglés B1 (B2 In-Progress)</li>
+                        <li>Español Avanzado</li>
                     </ul>
-                </div>
-            </div>
+                </section>
+
+                <!-- Skills section -->
+                <section class="skills-section">
+                    <h2 class="section-title">HABILIDADES</h2>
+                    <ul class="skills-list">
+                        <li>Conocimiento del mercado</li>
+                        <li>Habilidades de comunicación</li>
+                        <li>Habilidades de negociación</li>
+                        <li>Habilidades para la resolución de problemas</li>
+                        <li>Habilidades de organización y gestión del tiempo</li>
+                    </ul>
+                </section>
+            </aside>
+
+            <!-- Main content area -->
+            <main class="main-content">
+                <!-- Profile section -->
+                <section class="profile-section">
+                    <h2 class="section-title">PERFIL</h2>
+                    <p>Soy un estudiante de ingeniería en sistemas y computación en la Universidad de Caldas, Colombia.
+                        Actualmente me encuentro cursando los últimos semestres del pregrado, soy una persona proactiva,
+                        con gran interés en aprender nuevas tecnologías y desarrollo de proyectos. Me considero una
+                        persona demasiado responsable y comprometida con mis deberes.</p>
+                </section>
+
+                <!-- Work experience section -->
+                <section class="experience-section">
+                    <h2 class="section-title">EXPERIENCIA LABORAL</h2>
+                    <div class="experience-item">
+                        <h3 class="job-title">DESARROLLADOR DE SOFTWARE</h3>
+                        <div class="company-info">
+                            <h4>EBS-WebDev</h4>
+                            <p class="period">2025 - 6 Meses</p>
+                        </div>
+                        <ul class="job-duties">
+                            <li>Desarrollador Web</li>
+                            <li>Creación de Widgets</li>
+                            <li>Solución de Bugs</li>
+                            <li>Desarrollador Plug-in</li>
+                            <li>Mantenimiento Páginas Web</li>
+                            <li>Administración Base de Datos</li>
+                            <li>Desarrollador Backend</li>
+                            <li>Desarrollo y Consumo API's</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Technologies section -->
+                <section class="technologies-section">
+                    <h2 class="section-title">TECNOLOGÍAS</h2>
+                    <div class="tech-grid">
+                        <div class="tech-column">
+                            <ul>
+                                <li>Angular CLI</li>
+                                <li>React</li>
+                                <li>JavaScript</li>
+                                <li>TypeScript</li>
+                                <li>Django</li>
+                                <li>WordPress</li>
+                                <li>HTML Avanzado</li>
+                                <li>CSS Avanzado</li>
+                                <li>AdonisJS</li>
+                                <li>NodeJS</li>
+                                <li>Git</li>
+                            </ul>
+                        </div>
+                        <div class="tech-column">
+                            <ul>
+                                <li>Python</li>
+                                <li>Java</li>
+                                <li>SpringBoot</li>
+                                <li>PHP</li>
+                                <li>OracleDB</li>
+                                <li>SQL/PL-SQL</li>
+                                <li>MongoDB</li>
+                                <li>Flask</li>
+                                <li>FastAPI</li>
+                                <li>Laravel</li>
+                                <li>Github</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </main>
         </div>
     </div>
 </body>
+
+</html>

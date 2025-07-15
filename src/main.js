@@ -4,11 +4,13 @@ document.addEventListener('DOMContentLoaded', function () {
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
     const navLinks = document.querySelectorAll('.nav-link');
+    const body = document.body;
 
     // Mobile menu toggle
     hamburger.addEventListener('click', function () {
         hamburger.classList.toggle('active');
         navMenu.classList.toggle('active');
+        body.classList.toggle('menu-open');
     });
 
     // Close mobile menu when clicking on a link
@@ -16,19 +18,55 @@ document.addEventListener('DOMContentLoaded', function () {
         link.addEventListener('click', function () {
             hamburger.classList.remove('active');
             navMenu.classList.remove('active');
+            body.classList.remove('menu-open');
         });
     });
 
-    // Navbar scroll effect
-    window.addEventListener('scroll', function () {
-        if (window.scrollY > 100) {
-            navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-            navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
-        } else {
-            navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-            navbar.style.boxShadow = 'none';
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function (e) {
+        if (!navbar.contains(e.target) && navMenu.classList.contains('active')) {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+            body.classList.remove('menu-open');
         }
     });
+
+    // Enhanced navbar scroll effect
+    let lastScrollTop = 0;
+    let ticking = false;
+
+    function updateNavbar() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+        if (scrollTop > 100) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+
+        // Hide/show navbar on scroll for mobile
+        if (window.innerWidth <= 768) {
+            if (scrollTop > lastScrollTop && scrollTop > 200) {
+                navbar.style.transform = 'translateY(-100%)';
+            } else {
+                navbar.style.transform = 'translateY(0)';
+            }
+        } else {
+            navbar.style.transform = 'translateY(0)';
+        }
+
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+        ticking = false;
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(updateNavbar);
+            ticking = true;
+        }
+    }
+
+    window.addEventListener('scroll', requestTick);
 
     // Active navigation link highlighting
     const sections = document.querySelectorAll('section[id]');
@@ -53,7 +91,25 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     window.addEventListener('scroll', highlightNavigation);
-    highlightNavigation(); // Call once on load
+    highlightNavigation();
+
+    // Intersection Observer for animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate-in');
+            }
+        });
+    }, observerOptions);
+
+    // Observe all animatable elements
+    const animateElements = document.querySelectorAll('.project-card, .skill-item, .stat-item, .info-card');
+    animateElements.forEach(el => observer.observe(el));
 });
 
 // Projects filter functionality
@@ -301,6 +357,98 @@ document.addEventListener('DOMContentLoaded', function () {
         item.style.transform = 'translateY(30px)';
         observer.observe(item);
     });
+});
+
+// Enhanced image loading
+document.addEventListener('DOMContentLoaded', function () {
+    const images = document.querySelectorAll('.project-image img');
+
+    images.forEach(img => {
+        img.addEventListener('load', function () {
+            this.classList.add('loaded');
+        });
+
+        // If image is already cached
+        if (img.complete) {
+            img.classList.add('loaded');
+        }
+    });
+});
+
+// Touch gesture support for mobile
+document.addEventListener('DOMContentLoaded', function () {
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    const projectsGrid = document.querySelector('.projects-grid');
+
+    if (projectsGrid && window.innerWidth <= 768) {
+        projectsGrid.addEventListener('touchstart', function (e) {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        projectsGrid.addEventListener('touchend', function (e) {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            if (touchEndX < touchStartX - 50) {
+                // Swipe left - could implement project navigation
+                console.log('Swiped left');
+            }
+            if (touchEndX > touchStartX + 50) {
+                // Swipe right
+                console.log('Swiped right');
+            }
+        }
+    }
+});
+
+// Performance optimization for scroll events
+let resizeTimer;
+window.addEventListener('resize', function () {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function () {
+        // Recalculate layouts on resize
+        const hero = document.querySelector('.hero');
+        if (hero) {
+            hero.style.minHeight = window.innerHeight + 'px';
+        }
+    }, 250);
+});
+
+// Add loading animation to buttons
+document.addEventListener('DOMContentLoaded', function () {
+    const buttons = document.querySelectorAll('.btn, .filter-btn');
+
+    buttons.forEach(button => {
+        button.addEventListener('click', function () {
+            if (!this.classList.contains('loading')) {
+                this.classList.add('loading');
+                setTimeout(() => {
+                    this.classList.remove('loading');
+                }, 1000);
+            }
+        });
+    });
+});
+
+// Lazy loading for project images
+document.addEventListener('DOMContentLoaded', function () {
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src;
+                img.classList.remove('lazy');
+                imageObserver.unobserve(img);
+            }
+        });
+    });
+
+    const lazyImages = document.querySelectorAll('img[data-src]');
+    lazyImages.forEach(img => imageObserver.observe(img));
 });
 
 // Add CSS animations

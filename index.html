@@ -58,7 +58,7 @@
                 <h1 class="hero-title">Diseñando arquitecturas robustas.<br><span>Creando software de alto nivel.</span></h1>
                 <p class="hero-subtitle">Especializado en desarrollo Backend, sistemas distribuidos, optimización de bases de datos y principios SOLID / DDD.</p>
                 <div class="hero-buttons">
-                    <a href="#playground" class="btn btn-primary magnetic">Probar API Interactiva</a>
+                    <a href="#playground" class="btn btn-primary magnetic">Probar API Playground</a>
                     <a href="#projects" class="btn btn-secondary magnetic">Ver Proyectos</a>
                 </div>
                 <div class="hero-social">
@@ -130,10 +130,7 @@
                 </div>
                 <div class="terminal-body">
                     <div class="terminal-tabs">
-                        <button class="terminal-tab active magnetic" data-endpoint="proyectos">
-                            <span class="method get">GET</span> /proyectos
-                        </button>
-                        <button class="terminal-tab magnetic" data-endpoint="skills">
+                        <button class="terminal-tab active magnetic" data-endpoint="skills">
                             <span class="method get">GET</span> /habilidades
                         </button>
                         <button class="terminal-tab magnetic" data-endpoint="contacto">
@@ -143,7 +140,7 @@
                     <div class="terminal-console">
                         <div class="console-input-line">
                             <span class="prompt">guest@jgarcia-api:~$</span>
-                            <span class="cmd-text" id="terminal-cmd">curl -X GET https://api.jgarciarf2.dev/v1/proyectos</span>
+                            <span class="cmd-text" id="terminal-cmd">curl -X GET https://api.jgarciarf2.dev/v1/habilidades</span>
                         </div>
                         <div class="console-output">
                             <pre><code id="json-renderer" class="json-code"></code></pre>
@@ -172,10 +169,10 @@
                         <h3>Ariadna Communications</h3>
                         <p class="timeline-desc">Desarrollo integral de software y optimización técnica corporativa.</p>
                         <ul class="timeline-bullets">
-                            <li>Desarrollo de APIs RESTful escalables con Node.js, TypeScript, Python y PHP, documentadas detalladamente con **Swagger**.</li>
+                            <li>Desarrollo de APIs RESTful escalables con Node.js, TypeScript, Python y PHP, documentadas con <strong>Swagger</strong>.</li>
                             <li>Refactorización avanzada de consultas y optimización de latencia en bases de datos relacionales y no relacionales.</li>
-                            <li>Implementación de arquitecturas de contenedores con **Docker** e integración de flujos CI/CD.</li>
-                            <li>Diseño de landing pages avanzadas para <a href="https://distoyota.com" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: 600;">Distoyota.com</a> enfocadas en rendimiento y optimización de SEO técnico.</li>
+                            <li>Implementación de contenedores con **Docker** e integración de flujos CI/CD.</li>
+                            <li>Creación de landing pages avanzadas para <a href="https://distoyota.com" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: 600;">Distoyota.com</a> enfocadas en rendimiento, optimización de SEO técnico, creación de manuales, control de contenido y automatización de formularios con JetEngine y Zapier.</li>
                             <li>Integración segura con pasarelas de pago como Stripe e integraciones avanzadas con LLMs.</li>
                         </ul>
                     </div>
@@ -185,29 +182,15 @@
                     <div class="timeline-dot"></div>
                     <div class="timeline-date">2023 - 2025</div>
                     <div class="timeline-content">
-                        <span class="badge-role">Full-Stack & Systems Architect</span>
-                        <h3>Desarrollador Freelance</h3>
+                        <span class="badge-role">Desarrollador Freelance | EBS-WebDev</span>
+                        <h3>Independiente / EBS-WebDev</h3>
                         <p class="timeline-desc">Liderando la ingeniería e infraestructura de múltiples aplicaciones a medida.</p>
                         <ul class="timeline-bullets">
+                            <li>Implementación e integración de plugins certificados de pago locales como **Nequi** (certificado oficialmente por Nequi) y **Place to Pay**.</li>
+                            <li>Desarrollo de widgets de búsqueda personalizados para la centralizadora de **Aviajar** (<a href="https://aviajarcolombia.com/" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: 600;">aviajarcolombia.com</a>).</li>
                             <li>Diseño de arquitecturas de red complejas configurando protocolos de enrutamiento OSPF, BGP, RIP, y DHCP en IPv4/IPv6.</li>
-                            <li>Desarrollo de widgets y componentes frontend interactivos en React, Next.js y JavaScript Vanilla.</li>
-                            <li>Consumo e integración de pasarelas de pago financieras locales (Nequi, Place to Pay).</li>
-                            <li>Entrenamiento de redes neuronales de Machine Learning y desarrollo de análisis de sentimientos con Web Scraping.</li>
+                            <li>Desarrollo de sistemas integrados de telemedicina y tiendas de comercio electrónico (React Native, Node.js, MongoDB).</li>
                             <li>Automatización avanzada de procesos de negocios utilizando N8N e integraciones ERP Odoo.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="timeline-item" data-aos="fade-up">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">2024</div>
-                    <div class="timeline-content">
-                        <span class="badge-role">Desarrollador de Software</span>
-                        <h3>EBS-WebDev</h3>
-                        <p class="timeline-desc">Desarrollo de interfaces e integración de micro-servicios.</p>
-                        <ul class="timeline-bullets">
-                            <li>Creación de widgets reutilizables y consumo optimizado de APIs REST.</li>
-                            <li>Mantenimiento correctivo de aplicaciones de producción empresarial.</li>
                         </ul>
                     </div>
                 </div>
@@ -229,7 +212,7 @@
                 <div class="project-card tilt-card" data-aos="fade-up">
                     <div class="project-card-inner">
                         <div class="project-thumbnail-container">
-                            <img src="./resources/project-finance.png" alt="Finanzas Pro Thumbnail" class="project-thumbnail" onerror="this.style.display='none'">
+                            <img src="./resources/project-finance.png" alt="Finanzas Pro" class="project-thumbnail" onerror="this.style.display='none'">
                             <div class="project-thumbnail-fallback"><i class="fas fa-wallet"></i></div>
                         </div>
                         <div class="project-details">
@@ -252,28 +235,54 @@
                     </div>
                 </div>
 
-                <!-- Confianza -->
+                <!-- Simulador Confianza -->
                 <div class="project-card tilt-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="project-card-inner">
                         <div class="project-thumbnail-container">
-                            <img src="./resources/project-confianza.png" alt="Confianza Thumbnail" class="project-thumbnail" onerror="this.style.display='none'">
-                            <div class="project-thumbnail-fallback"><i class="fas fa-server"></i></div>
+                            <img src="./resources/project-simulador-confianza.png" alt="Simulador Confianza" class="project-thumbnail" onerror="this.style.display='none'">
+                            <div class="project-thumbnail-fallback"><i class="fas fa-calculator"></i></div>
                         </div>
                         <div class="project-details">
                             <div class="project-card-header">
-                                <h3>Confianza</h3>
-                                <span class="badge-tech">1000+ Endpoints</span>
+                                <h3>Simulador Confianza</h3>
+                                <span class="badge-tech">100% Backend</span>
                             </div>
-                            <p>API RESTful de gran escala desarrollada para Financiera Confianza, entidad financiera líder en el microdesarrollo en Perú. Implementa lógica compleja de tasas de seguros de desgravamen, autenticación mediante cookies y generador dinámico de PDFs.</p>
+                            <p>Desarrollo backend para el simulador oficial de créditos de Financiera Confianza en Perú. Responsable de la lógica de autenticación segura por cookies, control de sesiones, protección de endpoints y el cálculo financiero de desgravamen con/sin devolución.</p>
                             <div class="project-features">
-                                <span><i class="fas fa-key"></i> Cookies Authentication</span>
-                                <span><i class="fas fa-cogs"></i> Motor Financiero Complejo</span>
+                                <span><i class="fas fa-key"></i> Autenticación por Cookies</span>
+                                <span><i class="fas fa-cogs"></i> Desgravamen & Devolution Rate</span>
                             </div>
                             <div class="project-tags">
                                 <span>Express</span>
                                 <span>TypeScript</span>
                                 <span>Prisma ORM</span>
                                 <span>PostgreSQL</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="https://simulador.confianza.pe/simulador-credito" target="_blank" class="btn-project magnetic"><i class="fas fa-external-link-alt"></i> Simulador</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Confianza.pe -->
+                <div class="project-card tilt-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-card-inner">
+                        <div class="project-thumbnail-container">
+                            <img src="./resources/project-confianza.png" alt="Confianza.pe" class="project-thumbnail" onerror="this.style.display='none'">
+                            <div class="project-thumbnail-fallback"><i class="fas fa-university"></i></div>
+                        </div>
+                        <div class="project-details">
+                            <h3>Confianza.pe</h3>
+                            <p>Mantenimiento y desarrollo web para la plataforma principal de Financiera Confianza de la Fundación Microfinanzas BBVA. Creación de landing pages corporativas, gestión y control de contenidos dinámicos (multimedia, noticias, productos, artículos de ayuda).</p>
+                            <div class="project-features">
+                                <span><i class="fas fa-edit"></i> Creación de Landings</span>
+                                <span><i class="fas fa-images"></i> Gestión Multimedia & Productos</span>
+                            </div>
+                            <div class="project-tags">
+                                <span>PHP</span>
+                                <span>WordPress</span>
+                                <span>HTML5 / CSS3</span>
                             </div>
                             <div class="project-actions">
                                 <a href="https://confianza.pe" target="_blank" class="btn-project magnetic"><i class="fas fa-external-link-alt"></i> Visitar Sitio</a>
@@ -283,18 +292,18 @@
                 </div>
 
                 <!-- Brewery Adventure Tour -->
-                <div class="project-card tilt-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="project-card tilt-card" data-aos="fade-up" data-aos-delay="300">
                     <div class="project-card-inner">
                         <div class="project-thumbnail-container">
-                            <img src="./resources/project-bat.png" alt="Brewery Adventure Tour Thumbnail" class="project-thumbnail" onerror="this.style.display='none'">
+                            <img src="./resources/project-bat.png" alt="Brewery Adventure Tour" class="project-thumbnail" onerror="this.style.display='none'">
                             <div class="project-thumbnail-fallback"><i class="fas fa-beer"></i></div>
                         </div>
                         <div class="project-details">
                             <div class="project-card-header">
                                 <h3>Brewery Adventure Tour</h3>
-                                <span class="badge-tech">Stripe Payments</span>
+                                <span class="badge-tech">Full Backend</span>
                             </div>
-                            <p>API y base de datos para la gestión radial de cervecerías y geolocalización. Incluye pasarela de pagos integrada con Stripe para transacciones financieras, control preciso de fechas de campañas, y creación/administración de anuncios (Ads) dinámicos según coordenadas y rango geográfico.</p>
+                            <p>API y base de datos de cervecerías con búsqueda radial por geolocalización. Diseñé todo el backend, la gestión completa de Ads (creación, edición y control), la conexión segura con Stripe y el modelado general de la base de datos.</p>
                             <div class="project-features">
                                 <span><i class="fas fa-map-marked-alt"></i> Búsqueda Radial Geográfica</span>
                                 <span><i class="fas fa-credit-card"></i> Suscripciones Stripe</span>
@@ -313,18 +322,18 @@
                 </div>
 
                 <!-- ESEIT -->
-                <div class="project-card tilt-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="project-card tilt-card" data-aos="fade-up" data-aos-delay="400">
                     <div class="project-card-inner">
                         <div class="project-thumbnail-container">
-                            <img src="./resources/project-eseit.png" alt="ESEIT Thumbnail" class="project-thumbnail" onerror="this.style.display='none'">
+                            <img src="./resources/project-eseit.png" alt="ESEIT" class="project-thumbnail" onerror="this.style.display='none'">
                             <div class="project-thumbnail-fallback"><i class="fas fa-graduation-cap"></i></div>
                         </div>
                         <div class="project-details">
                             <h3>ESEIT</h3>
-                            <p>Desarrollo interactivo para la sección de convenios internacionales de la institución educativa. Lógica personalizada para modales dinámicos (popup), agrupamiento estético de logotipos de universidades asociadas y animaciones avanzadas y optimizadas.</p>
+                            <p>Mantenimiento y optimizaciones del portal web académico. Creación de landings personalizadas, modificación de temas de WordPress mediante PHP para adaptar plantillas a medida, optimizaciones SEO y optimización de rendimiento (WPO).</p>
                             <div class="project-features">
                                 <span><i class="fas fa-code"></i> WordPress custom PHP</span>
-                                <span><i class="fas fa-bolt"></i> Animaciones GSAP</span>
+                                <span><i class="fas fa-bolt"></i> Rendimiento & WPO</span>
                             </div>
                             <div class="project-tags">
                                 <span>PHP</span>
@@ -334,6 +343,33 @@
                             </div>
                             <div class="project-actions">
                                 <a href="https://www.eseit.edu.co" target="_blank" class="btn-project magnetic"><i class="fas fa-external-link-alt"></i> Visitar Sitio</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Distoyota -->
+                <div class="project-card tilt-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="project-card-inner">
+                        <div class="project-thumbnail-container">
+                            <img src="./resources/project-distoyota.png" alt="Distoyota" class="project-thumbnail" onerror="this.style.display='none'">
+                            <div class="project-thumbnail-fallback"><i class="fas fa-car"></i></div>
+                        </div>
+                        <div class="project-details">
+                            <h3>Distoyota</h3>
+                            <p>Desarrollo web corporativo para el concesionario oficial de Toyota. Creación de landings de alta conversión, optimizaciones de SEO on-page y técnico, automatizaciones de formularios complejas con JetEngine y Zapier, y redacción de manuales de uso.</p>
+                            <div class="project-features">
+                                <span><i class="fas fa-envelope-open-text"></i> Formularios JetEngine</span>
+                                <span><i class="fas fa-sync"></i> Integración Zapier</span>
+                            </div>
+                            <div class="project-tags">
+                                <span>WordPress</span>
+                                <span>JetEngine</span>
+                                <span>Zapier</span>
+                                <span>SEO Técnico</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="https://distoyota.com" target="_blank" class="btn-project magnetic"><i class="fas fa-external-link-alt"></i> Visitar Sitio</a>
                             </div>
                         </div>
                     </div>

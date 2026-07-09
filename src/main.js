@@ -125,40 +125,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const jsonRenderer = document.getElementById('json-renderer');
 
     const apiOutputs = {
-        proyectos: {
-            command: "curl -X GET https://api.jgarciarf2.dev/v1/proyectos",
-            data: {
-                status: 200,
-                success: true,
-                count: 4,
-                data: [
-                    {
-                        name: "Finanzas Pro (Finance App)",
-                        type: "Full-Stack Dashboard",
-                        tech: ["Next.js 16", "Supabase", "TypeScript", "Vanilla CSS"],
-                        features: "12-month projections, dynamic amortization, custom interactive charts"
-                    },
-                    {
-                        name: "Confianza",
-                        type: "Enterprise REST API",
-                        tech: ["Express", "TypeScript", "Prisma ORM", "PostgreSQL"],
-                        features: "1000+ endpoints, secure Cookie auth (no JWT), desgravamen simulation"
-                    },
-                    {
-                        name: "Brewery Adventure Tour",
-                        type: "Full Backend & Geolocalización",
-                        tech: ["Node.js", "MongoDB", "Mongoose", "Stripe API"],
-                        features: "Stripe subscriptions, geo radial query, dynamic Ads campaign control"
-                    },
-                    {
-                        name: "ESEIT",
-                        type: "Custom Theme & Interactive Front-End",
-                        tech: ["PHP", "SCSS", "GSAP Animations", "WordPress"],
-                        features: "Custom WordPress templates, interactive GSAP partner modals"
-                    }
-                ]
-            }
-        },
         skills: {
             command: "curl -X GET https://api.jgarciarf2.dev/v1/habilidades",
             data: {
@@ -211,8 +177,8 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Render projects tab by default
-    renderOutput('proyectos');
+    // Render skills tab by default
+    renderOutput('skills');
 
     // Form Submission Handling
     const contactForm = document.querySelector('.contact-form');

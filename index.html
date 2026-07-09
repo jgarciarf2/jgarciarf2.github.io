@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./src/style.css">
     <link rel="stylesheet" href="./src/style-mobile.css">
-    <title>Juan Fernando Garcia - Portfolio</title>
+    <title>Juan Fernando Garcia - Portafolio</title>
     <link rel="icon" type="image/png" href="./resources/ArfDev.png">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
@@ -19,7 +20,7 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <img src="./resources/ArfDev - Editado.png" alt="ArfDev Logo" class="logo-img">
+                <span class="logo-text">Arf<span>Dev</span></span>
             </div>
             <ul class="nav-menu">
                 <li class="nav-item">
@@ -27,6 +28,9 @@
                 </li>
                 <li class="nav-item">
                     <a href="#about" class="nav-link">Sobre mí</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#experience" class="nav-link">Experiencia</a>
                 </li>
                 <li class="nav-item">
                     <a href="#projects" class="nav-link">Proyectos</a>
@@ -50,37 +54,26 @@
     <section id="home" class="hero">
         <div class="hero-container">
             <div class="hero-content" data-aos="fade-up">
+                <div class="hero-badge">Full Stack Developer & Backend Specialist</div>
                 <h1 class="hero-title">Juan Fernando Garcia</h1>
-                <p class="hero-subtitle">Ingeniero en Sistemas | Desarrollador Full Stack</p>
-                <p class="hero-description">
-                    Apasionado por crear soluciones tecnológicas innovadoras y experiencias digitales excepcionales
-                </p>
+                <p class="hero-subtitle">Diseñando arquitecturas robustas y experiencias digitales de alto impacto.</p>
                 <div class="hero-buttons">
                     <a href="#projects" class="btn btn-primary">Ver Proyectos</a>
-                    <a href="#contact" class="btn btn-secondary">Contactame</a>
+                    <a href="#contact" class="btn btn-secondary">Contacto</a>
                 </div>
                 <div class="hero-social">
-                    <a href="mailto:jgarciarf216@gmail.com" class="social-link">
+                    <a href="mailto:jgarciarf216@gmail.com" class="social-link" title="Email">
                         <i class="fas fa-envelope"></i>
                     </a>
-                    <a href="https://github.com/jgarciarf2" class="social-link" target="_blank">
+                    <a href="https://github.com/jgarciarf2" class="social-link" target="_blank" title="GitHub">
                         <i class="fab fa-github"></i>
                     </a>
-                    <a href="https://linkedin.com/in/jgarciarf2" class="social-link" target="_blank">
+                    <a href="https://linkedin.com/in/jgarciarf2" class="social-link" target="_blank" title="LinkedIn">
                         <i class="fab fa-linkedin"></i>
                     </a>
-                    <a href="https://wa.me/573023217019" class="social-link" target="_blank">
+                    <a href="https://wa.me/573023217019" class="social-link" target="_blank" title="WhatsApp">
                         <i class="fab fa-whatsapp"></i>
                     </a>
-                </div>
-            </div>
-            <div class="hero-image" data-aos="fade-left">
-                <div class="profile-card">
-                    <img src="./resources/unnamed.jpg" alt="Juan Fernando Garcia" class="profile-img">
-                    <div class="card-content">
-                        <h3>Desarrollador</h3>
-                        <p>Full Stack Developer</p>
-                    </div>
                 </div>
             </div>
         </div>
@@ -89,59 +82,85 @@
     <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Sobre Mí</h2>
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Sobre Mí</h2>
+                <p class="section-subtitle">Estudiante de Ingeniería en Sistemas y Computación en la Universidad de Caldas, Colombia.</p>
+            </div>
             <div class="about-content">
                 <div class="about-text" data-aos="fade-right">
                     <p>
-                        Soy un estudiante de ingeniería en sistemas y computación en la Universidad de Caldas, Colombia.
-                        Fundador de ArfDev, un proyecto personal que refleja mi pasión por el desarrollo de software y
-                        la creación de soluciones tecnológicas.
-                        Actualmente me encuentro cursando los últimos semestres del pregrado, soy una persona proactiva,
-                        con gran interés en aprender nuevas tecnologías y desarrollo de proyectos.
+                        Apasionado por el desarrollo web con un fuerte enfoque en el diseño de arquitecturas sólidas en el backend y el desarrollo frontend moderno. Cuento con una mentalidad proactiva orientada a resolver problemas reales, optimizar procesos de negocio y construir sistemas escalables de alta disponibilidad.
                     </p>
                     <p>
-                        Me considero una persona responsable y comprometida con mis deberes. Mi experiencia en
-                        desarrollo
-                        de software incluye tanto frontend como backend, con especial enfoque en tecnologías web
-                        modernas.
+                        Mi trayectoria abarca desde el modelado de bases de datos complejas e integración de pasarelas de pago, hasta la gestión de infraestructura, administración de dominios, despliegue de servidores y optimización SEO técnica.
                     </p>
-                    <div class="stats">
-                        <div class="stat-item">
-                            <h3>6+</h3>
-                            <p>Meses de Experiencia</p>
-                        </div>
-                        <div class="stat-item">
-                            <h3>10+</h3>
-                            <p>Proyectos Completados</p>
-                        </div>
-                        <div class="stat-item">
-                            <h3>15+</h3>
-                            <p>Tecnologías</p>
-                        </div>
+                </div>
+                <div class="about-stats" data-aos="fade-left">
+                    <div class="stat-card">
+                        <h3>1000+</h3>
+                        <p>Endpoints creados</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Distoyota</h3>
+                        <p>Optimización & SEO</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>CMS</h3>
+                        <p>Temas WordPress en PHP</p>
                     </div>
                 </div>
-                <div class="about-info" data-aos="fade-left">
-                    <div class="info-card">
-                        <h3>Experiencia</h3>
-                        <div class="experience-item">
-                            <h4>Desarrollador de Software</h4>
-                            <p class="company">EBS-WebDev</p>
-                            <p class="period">2025 - 6 Meses</p>
-                            <ul>
-                                <li>Desarrollo Web Frontend/Backend</li>
-                                <li>Creación de Widgets personalizados</li>
-                                <li>Mantenimiento de aplicaciones web</li>
-                                <li>Desarrollo y consumo de APIs REST</li>
-                            </ul>
-                        </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Experiencia Profesional</h2>
+                <p class="section-subtitle">Soluciones tecnológicas a medida y optimización web.</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">Actualidad</div>
+                    <div class="timeline-content">
+                        <h3>Webmaster & Desarrollador Freelance</h3>
+                        <span class="company">Proyectos Independientes / Ariadna</span>
+                        <p>Gestión completa de soluciones y presencia web corporativa:</p>
+                        <ul>
+                            <li><strong>Distoyota.com:</strong> Creación de Landing Pages de alta conversión y optimización de SEO técnico para mejorar el posicionamiento orgánico.</li>
+                            <li><strong>Automatización:</strong> Integración y sincronización de flujos de trabajo avanzados con Zapier.</li>
+                            <li><strong>WordPress Experto:</strong> Modelado de datos complejos con JetEngine, formularios dinámicos avanzados y maquetación visual con Elementor.</li>
+                            <li><strong>DevOps:</strong> Administración de servidores, hosting y configuración de dominios seguros.</li>
+                        </ul>
                     </div>
-                    <div class="info-card">
-                        <h3>Educación</h3>
-                        <div class="education-item">
-                            <h4>Universidad de Caldas</h4>
-                            <p class="degree">Ingeniería en Sistemas y Computación</p>
-                            <p class="period">2022 - 2027</p>
-                        </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2025 (6 Meses)</div>
+                    <div class="timeline-content">
+                        <h3>Desarrollador WordPress & Frontend</h3>
+                        <span class="company">ESEIT / Ariadna</span>
+                        <p>Mantenimiento y desarrollo web para portal académico:</p>
+                        <ul>
+                            <li>Desarrollo, modificación y optimización de temas (Themes) y plantillas personalizadas en puro PHP utilizando campos personalizados avanzados.</li>
+                            <li>Creación de interfaces responsivas de convenios internacionales con animaciones interactivas fluidas utilizando <strong>GSAP</strong>.</li>
+                            <li>Gestión eficiente del código y flujos colaborativos mediante ramas en <strong>GitHub</strong> y <strong>GitLab</strong>.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2024</div>
+                    <div class="timeline-content">
+                        <h3>Desarrollador de Software</h3>
+                        <span class="company">EBS-WebDev</span>
+                        <p>Desarrollo Web Frontend y Backend:</p>
+                        <ul>
+                            <li>Construcción de Widgets personalizados y consumo estructurado de APIs RESTful.</li>
+                            <li>Mantenimiento y optimización de la velocidad de carga de aplicaciones web empresariales.</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -151,146 +170,96 @@
     <!-- Projects Section -->
     <section id="projects" class="projects">
         <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Mis Proyectos</h2>
-            <div class="projects-filter" data-aos="fade-up">
-                <button class="filter-btn active" data-filter="all">Todos</button>
-                <button class="filter-btn" data-filter="web">Web</button>
-                <button class="filter-btn" data-filter="mobile">Mobile</button>
-                <button class="filter-btn" data-filter="backend">Backend</button>
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Proyectos Destacados</h2>
+                <p class="section-subtitle">Casos de éxito desarrollados con tecnologías modernas.</p>
             </div>
             <div class="projects-grid">
-                <div class="project-card" data-category="web" data-aos="fade-up">
-                    <div class="project-image">
-                        <img src="https://via.placeholder.com/400x250/3498db/ffffff?text=E-Commerce+Platform"
-                            alt="E-Commerce Platform">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
-                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
-                            </div>
-                        </div>
-                    </div>
+                <!-- Finanzas Pro -->
+                <div class="project-card" data-aos="fade-up">
                     <div class="project-content">
-                        <h3>Plataforma E-Commerce</h3>
-                        <p>Aplicación web completa para comercio electrónico con carrito de compras, sistema de pagos y
-                            administración.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">MongoDB</span>
+                        <div class="project-header">
+                            <i class="fas fa-wallet project-icon"></i>
+                            <h3>Finanzas Pro (Finance App)</h3>
                         </div>
-                    </div>
-                </div>
-
-                <div class="project-card" data-category="web" data-aos="fade-up" data-aos-delay="100">
-                    <div class="project-image">
-                        <img src="https://via.placeholder.com/400x250/e74c3c/ffffff?text=Task+Manager"
-                            alt="Task Manager">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
-                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
-                            </div>
+                        <p>Dashboard full-stack para gestión financiera personal y familiar. Cuenta con un sistema inteligente de proyección a 12 meses consciente de los ciclos de facturación, cálculo automático de amortizaciones de deuda y flujos de efectivo representados mediante gráficos SVG personalizados.</p>
+                        <div class="project-details-list">
+                            <span><i class="fas fa-check"></i> Supabase Auth & DB</span>
+                            <span><i class="fas fa-check"></i> Modo Demo (LocalStorage)</span>
                         </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>Gestor de Tareas</h3>
-                        <p>Aplicación web para gestión de proyectos y tareas con funcionalidades de colaboración en
-                            tiempo real.</p>
                         <div class="project-tech">
-                            <span class="tech-tag">Angular</span>
+                            <span class="tech-tag">Next.js 16</span>
+                            <span class="tech-tag">Supabase</span>
                             <span class="tech-tag">TypeScript</span>
-                            <span class="tech-tag">Firebase</span>
+                            <span class="tech-tag">Vanilla CSS</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/jgarciarf2/finance-app" target="_blank" class="project-link"><i class="fab fa-github"></i> Código en GitHub</a>
                         </div>
                     </div>
                 </div>
 
-                <div class="project-card" data-category="backend" data-aos="fade-up" data-aos-delay="200">
-                    <div class="project-image">
-                        <img src="https://via.placeholder.com/400x250/2ecc71/ffffff?text=REST+API" alt="REST API">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
-                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
-                            </div>
-                        </div>
-                    </div>
+                <!-- Confianza Backend -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="project-content">
-                        <h3>API RESTful</h3>
-                        <p>API robusta para gestión de usuarios, autenticación JWT y operaciones CRUD con documentación
-                            completa.</p>
+                        <div class="project-header">
+                            <i class="fas fa-server project-icon"></i>
+                            <h3>Confianza Backend</h3>
+                        </div>
+                        <span class="badge-full-backend">Full Backend</span>
+                        <p>API RESTful de gran escala desarrollada para un simulador financiero. Cuenta con más de 1,000 endpoints implementados, autenticación segura basada en Cookies corporativas en lugar de JWT, cálculos de amortización, lógica de seguros de desgravamen con y sin devolución, y generación de informes oficiales en formato PDF.</p>
+                        <div class="project-details-list">
+                            <span><i class="fas fa-check"></i> Autenticación por Cookies</span>
+                            <span><i class="fas fa-check"></i> 1,000+ Endpoints</span>
+                        </div>
                         <div class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Django</span>
+                            <span class="tech-tag">Express</span>
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">Prisma ORM</span>
                             <span class="tech-tag">PostgreSQL</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="project-card" data-category="mobile" data-aos="fade-up" data-aos-delay="300">
-                    <div class="project-image">
-                        <img src="https://via.placeholder.com/400x250/9b59b6/ffffff?text=Weather+App" alt="Weather App">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
-                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
-                            </div>
-                        </div>
-                    </div>
+                <!-- BAT Backend -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="project-content">
-                        <h3>App del Clima</h3>
-                        <p>Aplicación móvil que muestra información meteorológica en tiempo real con geolocalización.
-                        </p>
+                        <div class="project-header">
+                            <i class="fas fa-beer project-icon"></i>
+                            <h3>BAT Backend & Anuncios</h3>
+                        </div>
+                        <span class="badge-full-backend">Full Backend</span>
+                        <p>API y base de datos para la gestión radial de cervecerías y geolocalización. Incluye pasarela de pagos integrada con Stripe para transacciones financieras, control preciso de fechas de campañas, y creación/administración de anuncios (Ads) dinámicos según coordenadas y rango geográfico.</p>
+                        <div class="project-details-list">
+                            <span><i class="fas fa-check"></i> Pasarela Stripe</span>
+                            <span><i class="fas fa-check"></i> Geolocalización radial</span>
+                        </div>
                         <div class="project-tech">
-                            <span class="tech-tag">React Native</span>
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">API</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">Mongoose</span>
+                            <span class="tech-tag">Stripe API</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="project-card" data-category="web" data-aos="fade-up" data-aos-delay="400">
-                    <div class="project-image">
-                        <img src="https://via.placeholder.com/400x250/f39c12/ffffff?text=Portfolio+Web"
-                            alt="Portfolio Web">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
-                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
-                            </div>
-                        </div>
-                    </div>
+                <!-- ESEIT Convenios -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="300">
                     <div class="project-content">
-                        <h3>Portfolio Personal</h3>
-                        <p>Sitio web personal interactivo y responsivo para mostrar proyectos y habilidades
-                            profesionales.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">HTML5</span>
-                            <span class="tech-tag">CSS3</span>
-                            <span class="tech-tag">JavaScript</span>
+                        <div class="project-header">
+                            <i class="fas fa-graduation-cap project-icon"></i>
+                            <h3>ESEIT Convenios Académicos</h3>
                         </div>
-                    </div>
-                </div>
-
-                <div class="project-card" data-category="backend" data-aos="fade-up" data-aos-delay="500">
-                    <div class="project-image">
-                        <img src="https://via.placeholder.com/400x250/1abc9c/ffffff?text=Microservices"
-                            alt="Microservices">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
-                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
-                            </div>
+                        <p>Desarrollo interactivo para la sección de convenios internacionales de la institución educativa. Lógica personalizada para modales dinámicos (popup), agrupamiento estético de logotipos de universidades asociadas y animaciones avanzadas y optimizadas.</p>
+                        <div class="project-details-list">
+                            <span><i class="fas fa-check"></i> WordPress PHP</span>
+                            <span><i class="fas fa-check"></i> Animación con GSAP</span>
                         </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>Arquitectura Microservicios</h3>
-                        <p>Sistema distribuido con microservicios para gestión de inventario y facturación empresarial.
-                        </p>
                         <div class="project-tech">
-                            <span class="tech-tag">Java</span>
-                            <span class="tech-tag">Spring Boot</span>
-                            <span class="tech-tag">Docker</span>
+                            <span class="tech-tag">PHP</span>
+                            <span class="tech-tag">SCSS</span>
+                            <span class="tech-tag">GSAP</span>
+                            <span class="tech-tag">WordPress</span>
                         </div>
                     </div>
                 </div>
@@ -301,95 +270,45 @@
     <!-- Skills Section -->
     <section id="skills" class="skills">
         <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Tecnologías & Habilidades</h2>
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Habilidades Técnicas</h2>
+                <p class="section-subtitle">Tecnologías y herramientas que domino.</p>
+            </div>
             <div class="skills-content">
                 <div class="skills-category" data-aos="fade-right">
-                    <h3>Frontend</h3>
+                    <h3>Backend</h3>
                     <div class="skills-grid">
-                        <div class="skill-item">
-                            <i class="fab fa-html5"></i>
-                            <span>HTML5</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-css3-alt"></i>
-                            <span>CSS3</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-js-square"></i>
-                            <span>JavaScript</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-react"></i>
-                            <span>React</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-angular"></i>
-                            <span>Angular</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-bootstrap"></i>
-                            <span>Bootstrap</span>
-                        </div>
+                        <div class="skill-item"><span>Node.js / Express</span></div>
+                        <div class="skill-item"><span>PHP (WordPress / Temas / custom fields)</span></div>
+                        <div class="skill-item"><span>TypeScript / JavaScript</span></div>
+                        <div class="skill-item"><span>Python / Django</span></div>
+                        <div class="skill-item"><span>Java / Spring Boot</span></div>
+                        <div class="skill-item"><span>PostgreSQL / MySQL</span></div>
+                        <div class="skill-item"><span>MongoDB / Mongoose</span></div>
+                        <div class="skill-item"><span>Prisma ORM</span></div>
                     </div>
                 </div>
 
                 <div class="skills-category" data-aos="fade-up">
-                    <h3>Backend</h3>
+                    <h3>Frontend</h3>
                     <div class="skills-grid">
-                        <div class="skill-item">
-                            <i class="fab fa-node-js"></i>
-                            <span>Node.js</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-python"></i>
-                            <span>Python</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-java"></i>
-                            <span>Java</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-server"></i>
-                            <span>Django</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-leaf"></i>
-                            <span>Spring Boot</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-php"></i>
-                            <span>PHP</span>
-                        </div>
+                        <div class="skill-item"><span>HTML5 / CSS3 (Vanilla)</span></div>
+                        <div class="skill-item"><span>Next.js / React</span></div>
+                        <div class="skill-item"><span>Angular</span></div>
+                        <div class="skill-item"><span>GSAP (Animaciones)</span></div>
+                        <div class="skill-item"><span>WordPress / Elementor / JetEngine</span></div>
+                        <div class="skill-item"><span>Responsive Design</span></div>
                     </div>
                 </div>
 
                 <div class="skills-category" data-aos="fade-left">
-                    <h3>Bases de Datos</h3>
+                    <h3>Herramientas & DevOps</h3>
                     <div class="skills-grid">
-                        <div class="skill-item">
-                            <i class="fas fa-database"></i>
-                            <span>MySQL</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-database"></i>
-                            <span>PostgreSQL</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-database"></i>
-                            <span>MongoDB</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-database"></i>
-                            <span>Oracle DB</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-code"></i>
-                            <span>PL/SQL</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-fire"></i>
-                            <span>Firebase</span>
-                        </div>
+                        <div class="skill-item"><span>Git / GitHub / GitLab</span></div>
+                        <div class="skill-item"><span>Stripe API (Pasarelas de Pago)</span></div>
+                        <div class="skill-item"><span>Zapier (Automatización)</span></div>
+                        <div class="skill-item"><span>SEO Técnico & Landings</span></div>
+                        <div class="skill-item"><span>Servidores & Administración de Dominios</span></div>
                     </div>
                 </div>
             </div>
@@ -399,38 +318,31 @@
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Contacto</h2>
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Contacto</h2>
+                <p class="section-subtitle">¿Tienes algún proyecto en mente? ¡Trabajemos juntos!</p>
+            </div>
             <div class="contact-content">
                 <div class="contact-info" data-aos="fade-right">
-                    <h3>¡Hablemos!</h3>
-                    <p>¿Tienes un proyecto en mente? ¿Buscas un desarrollador comprometido? ¡Me encantaría escuchar de
-                        ti!</p>
-
+                    <h3>¡Conectemos!</h3>
+                    <p>Si buscas un desarrollador enfocado en calidad, rendimiento y buenas prácticas, no dudes en escribirme.</p>
                     <div class="contact-details">
                         <div class="contact-item">
                             <i class="fas fa-envelope"></i>
                             <div>
                                 <h4>Email</h4>
-                                <p>jgarciarf216@gmail.com</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-phone"></i>
-                            <div>
-                                <h4>Teléfono</h4>
-                                <p>+57 302 321 7019</p>
+                                <p><a href="mailto:jgarciarf216@gmail.com">jgarciarf216@gmail.com</a></p>
                             </div>
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-map-marker-alt"></i>
                             <div>
                                 <h4>Ubicación</h4>
-                                <p>Manizales, Colombia</p>
+                                <p>Manizales, Caldas, Colombia</p>
                             </div>
                         </div>
                     </div>
                 </div>
-
                 <form class="contact-form" data-aos="fade-left">
                     <div class="form-group">
                         <input type="text" placeholder="Tu Nombre" required>
@@ -442,7 +354,7 @@
                         <input type="text" placeholder="Asunto" required>
                     </div>
                     <div class="form-group">
-                        <textarea placeholder="Tu Mensaje" rows="6" required></textarea>
+                        <textarea placeholder="Tu Mensaje" rows="5" required></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
                 </form>
@@ -454,22 +366,11 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-text">
-                    <p>&copy; 2025 - ArfDev - Todos los derechos reservados.</p>
-                </div>
+                <p>&copy; 2026 ArfDev - Todos los derechos reservados.</p>
                 <div class="footer-social">
-                    <a href="mailto:jgarciarf216@gmail.com" class="social-link">
-                        <i class="fas fa-envelope"></i>
-                    </a>
-                    <a href="https://github.com/jgarciarf2" class="social-link" target="_blank">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://linkedin.com/in/jgarciarf2" class="social-link" target="_blank">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="https://wa.me/573023217019" class="social-link" target="_blank">
-                        <i class="fab fa-whatsapp"></i>
-                    </a>
+                    <a href="mailto:jgarciarf216@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
+                    <a href="https://github.com/jgarciarf2" class="social-link" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/jgarciarf2" class="social-link" target="_blank"><i class="fab fa-linkedin"></i></a>
                 </div>
             </div>
         </div>
@@ -479,7 +380,7 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({
-            duration: 1000,
+            duration: 800,
             once: true
         });
     </script>

@@ -54,8 +54,11 @@
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+  position: relative;
 }
 
 body {
@@ -64,7 +67,6 @@ body {
   color: var(--text-primary);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
   transition: background-color 0.5s ease, color 0.5s ease;
 }
 
@@ -72,6 +74,8 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 32px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* Custom Interactive Cursor (Desktop Only) */
@@ -219,6 +223,7 @@ body {
 section {
   padding: 140px 0;
   position: relative;
+  width: 100%;
 }
 
 .about-badge {
@@ -664,6 +669,7 @@ section {
   grid-template-columns: repeat(2, 1fr);
   gap: 40px;
   perspective: 1000px;
+  width: 100%;
 }
 
 .project-card {
@@ -673,6 +679,7 @@ section {
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
   display: flex;
+  width: 100%;
 }
 
 .project-card-inner {

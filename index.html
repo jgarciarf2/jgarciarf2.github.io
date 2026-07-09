@@ -1,120 +1,156 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-theme="dark">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./src/style.css">
     <link rel="stylesheet" href="./src/style-mobile.css">
-    <title>Juan Fernando García Restrepo - Portafolio</title>
+    <title>Juan Fernando García Restrepo | Ingeniero de Sistemas & Full-Stack Specialist</title>
     <link rel="icon" type="image/png" href="./resources/ArfDev.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
+    <!-- Custom Cursor -->
+    <div class="custom-cursor"></div>
+    <div class="custom-cursor-dot"></div>
+
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <div class="nav-logo">
-                <span class="logo-text">Arf<span>Dev</span></span>
+            <div class="nav-logo magnetic">
+                <span class="logo-text">Juan F. García</span>
             </div>
             <ul class="nav-menu">
-                <li class="nav-item">
-                    <a href="#home" class="nav-link">Inicio</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#about" class="nav-link">Perfil</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#experience" class="nav-link">Experiencia</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#projects" class="nav-link">Proyectos</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#skills" class="nav-link">Habilidades</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#education" class="nav-link">Educación</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#contact" class="nav-link">Contacto</a>
-                </li>
+                <li class="nav-item"><a href="#home" class="nav-link magnetic">Inicio</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link magnetic">Perfil</a></li>
+                <li class="nav-item"><a href="#playground" class="nav-link magnetic">API Playground</a></li>
+                <li class="nav-item"><a href="#experience" class="nav-link magnetic">Experiencia</a></li>
+                <li class="nav-item"><a href="#projects" class="nav-link magnetic">Proyectos</a></li>
+                <li class="nav-item"><a href="#skills" class="nav-link magnetic">Habilidades</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link magnetic">Contacto</a></li>
             </ul>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+            <div class="nav-actions">
+                <button id="theme-toggle" class="theme-toggle-btn magnetic" aria-label="Cambiar tema">
+                    <i class="fas fa-sun icon-sun"></i>
+                    <i class="fas fa-moon icon-moon"></i>
+                </button>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
+        <div class="hero-glow"></div>
         <div class="hero-container">
             <div class="hero-content" data-aos="fade-up">
-                <div class="hero-badge">Ingeniero en Sistemas y Computación | Backend & Full-Stack Specialist</div>
-                <h1 class="hero-title">Juan Fernando García Restrepo</h1>
-                <p class="hero-subtitle">Especializado en Arquitectura Backend, Microservicios y Sistemas Distribuidos.</p>
+                <div class="hero-badge">Ingeniero de Sistemas (8vo Semestre)</div>
+                <h1 class="hero-title">Diseñando arquitecturas robustas.<br><span>Creando software de alto nivel.</span></h1>
+                <p class="hero-subtitle">Especializado en desarrollo Backend, sistemas distribuidos, optimización de bases de datos y principios SOLID / DDD.</p>
                 <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-primary">Ver Proyectos</a>
-                    <a href="#contact" class="btn btn-secondary">Contacto</a>
+                    <a href="#playground" class="btn btn-primary magnetic">Probar API Interactiva</a>
+                    <a href="#projects" class="btn btn-secondary magnetic">Ver Proyectos</a>
                 </div>
                 <div class="hero-social">
-                    <a href="mailto:jgarciarf216@gmail.com" class="social-link" title="Email">
-                        <i class="fas fa-envelope"></i>
-                    </a>
-                    <a href="https://github.com/jgarciarf2" class="social-link" target="_blank" title="GitHub">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://linkedin.com/in/jgarciarf2" class="social-link" target="_blank" title="LinkedIn">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="https://wa.me/573023217019" class="social-link" target="_blank" title="WhatsApp">
-                        <i class="fab fa-whatsapp"></i>
-                    </a>
+                    <a href="mailto:jgarciarf216@gmail.com" class="social-link magnetic" title="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="https://github.com/jgarciarf2" class="social-link magnetic" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/jgarciarf2" class="social-link magnetic" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://wa.me/573023217019" class="social-link magnetic" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- Profile Section -->
     <section id="about" class="about">
         <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <h2 class="section-title">Perfil Técnico</h2>
-                <p class="section-subtitle">Ingeniero de Sistemas (8vo semestre) enfocado en principios SOLID, Clean Code y DDD.</p>
-            </div>
-            <div class="about-content">
-                <div class="about-text" data-aos="fade-right">
-                    <p>
-                        Especialista en el diseño de microservicios, sistemas distribuidos de alta disponibilidad y la optimización avanzada de bases de datos. Experiencia sólida en configuración de redes, infraestructura cloud y la automatización inteligente de flujos de trabajo corporativos.
+            <div class="about-grid">
+                <div class="about-info" data-aos="fade-right">
+                    <div class="about-badge">SOBRE MÍ</div>
+                    <h2 class="section-title">Perfil Técnico</h2>
+                    <p class="about-text">
+                        Como estudiante de Ingeniería en Sistemas y Computación en la Universidad de Caldas, me enfoco en crear arquitecturas backend limpias, eficientes y seguras. Mi enfoque de desarrollo se basa en principios de ingeniería sólidos como **SOLID**, **DDD (Domain-Driven Design)** y **Clean Code**.
                     </p>
-                    <p>
-                        Con una alta capacidad de trabajo en equipo, comunicación asertiva, aprendizaje continuo y gran disposición para asimilar y aplicar nuevas tecnologías y paradigmas de desarrollo ágil.
+                    <p class="about-text">
+                        Cuento con amplia experiencia en la optimización de bases de datos relacionales y no relacionales, infraestructura en la nube, despliegue de microservicios contenerizados y automatizaciones de flujos de trabajo corporativos para impulsar la eficiencia empresarial.
                     </p>
-                    <div class="languages-box" style="margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--border-color);">
-                        <strong>Idiomas:</strong> 
-                        <span class="tech-tag" style="margin-left: 8px;">Inglés: Avanzado</span>
-                        <span class="tech-tag">Español: Nativo</span>
+                    <div class="languages-box">
+                        <span class="lang-tag"><strong>Inglés:</strong> Avanzado</span>
+                        <span class="lang-tag"><strong>Español:</strong> Nativo</span>
                     </div>
                 </div>
-                <div class="about-stats" data-aos="fade-left">
-                    <div class="stat-card">
-                        <h3>SOLID & DDD</h3>
-                        <p>Principios de Arquitectura Limpia</p>
+                <div class="about-cards" data-aos="fade-left">
+                    <div class="profile-feature-card">
+                        <div class="feature-icon"><i class="fas fa-layer-group"></i></div>
+                        <h3>Sistemas Distribuidos</h3>
+                        <p>Diseño e implementación de microservicios robustos y APIs REST de alto rendimiento.</p>
                     </div>
-                    <div class="stat-card">
-                        <h3>Redes y Cloud</h3>
-                        <p>Infraestructura IPv4/IPv6, OSPF, BGP</p>
+                    <div class="profile-feature-card">
+                        <div class="feature-icon"><i class="fas fa-database"></i></div>
+                        <h3>Optimización de Latencia</h3>
+                        <p>Refactorización de consultas y modelado de datos escalables (SQL & NoSQL).</p>
                     </div>
-                    <div class="stat-card">
-                        <h3>Automatización</h3>
-                        <p>Flujos integrados con Zapier, N8N y Odoo</p>
+                    <div class="profile-feature-card">
+                        <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+                        <h3>Seguridad de la Información</h3>
+                        <p>Certificaciones en Ciberseguridad e ISO 27001 aplicadas al desarrollo de software.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Playground Section (Interactive REST Terminal) -->
+    <section id="playground" class="playground">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <div class="about-badge">BACKEND DEMO</div>
+                <h2 class="section-title">REST API Playground</h2>
+                <p class="section-subtitle">Interactúa con mi perfil consumiendo esta consola de simulación de API RESTful.</p>
+            </div>
+
+            <div class="terminal-container" data-aos="fade-up">
+                <div class="terminal-header">
+                    <div class="terminal-dots">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                    </div>
+                    <div class="terminal-title">api-client - bash</div>
+                </div>
+                <div class="terminal-body">
+                    <div class="terminal-tabs">
+                        <button class="terminal-tab active magnetic" data-endpoint="proyectos">
+                            <span class="method get">GET</span> /proyectos
+                        </button>
+                        <button class="terminal-tab magnetic" data-endpoint="simulador">
+                            <span class="method post">POST</span> /simular-credito
+                        </button>
+                        <button class="terminal-tab magnetic" data-endpoint="skills">
+                            <span class="method get">GET</span> /habilidades
+                        </button>
+                        <button class="terminal-tab magnetic" data-endpoint="contacto">
+                            <span class="method get">GET</span> /contacto
+                        </button>
+                    </div>
+                    <div class="terminal-console">
+                        <div class="console-input-line">
+                            <span class="prompt">guest@jgarcia-api:~$</span>
+                            <span class="cmd-text" id="terminal-cmd">curl -X GET https://api.jgarciarf2.dev/v1/proyectos</span>
+                        </div>
+                        <div class="console-output">
+                            <pre><code id="json-renderer" class="json-code"></code></pre>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -125,55 +161,56 @@
     <section id="experience" class="experience">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
+                <div class="about-badge">TRAYECTORIA</div>
                 <h2 class="section-title">Experiencia Profesional</h2>
-                <p class="section-subtitle">Historial de desarrollo y diseño de sistemas.</p>
+                <p class="section-subtitle">Construyendo y optimizando sistemas robustos de alta demanda.</p>
             </div>
+
             <div class="timeline">
                 <div class="timeline-item" data-aos="fade-up">
                     <div class="timeline-dot"></div>
-                    <div class="timeline-date">Diciembre 2025 - Actualidad</div>
+                    <div class="timeline-date">Dic 2025 - Actualidad</div>
                     <div class="timeline-content">
-                        <h3>Full-Stack Developer | WebMaster</h3>
-                        <span class="company">Ariadna Communications</span>
-                        <ul>
-                            <li>Desarrollo integral de APIs RESTful escalables y documentadas con <strong>Swagger</strong> utilizando Node.js, TypeScript, Python y PHP.</li>
-                            <li>Refactorización avanzada de consultas SQL/NoSQL que redujo la latencia en endpoints críticos empresariales.</li>
-                            <li>Implementación de contenedores con <strong>Docker</strong> para entornos de alta disponibilidad y automatización de pipelines de CI/CD.</li>
-                            <li>Creación de landings avanzadas para <strong>Distoyota.com</strong> con optimización de Core Web Vitals y SEO técnico.</li>
-                            <li>Conexión e integración avanzada con pasarelas de pago (Stripe) y automatizaciones corporativas con Zapier.</li>
-                            <li>Desarrollo de plugins, plantillas personalizadas y temas completos para WordPress desde cero.</li>
-                            <li>Integración avanzada con LLMs (Modelos de Inteligencia Artificial).</li>
+                        <span class="badge-role">Full-Stack & Webmaster</span>
+                        <h3>Ariadna Communications</h3>
+                        <p class="timeline-desc">Desarrollo integral de software y optimización técnica corporativa.</p>
+                        <ul class="timeline-bullets">
+                            <li>Desarrollo de APIs RESTful escalables con Node.js, TypeScript, Python y PHP, documentadas detalladamente con **Swagger**.</li>
+                            <li>Refactorización avanzada de consultas y optimización de latencia en bases de datos relacionales y no relacionales.</li>
+                            <li>Implementación de arquitecturas de contenedores con **Docker** e integración de flujos CI/CD.</li>
+                            <li>Diseño de landing pages avanzadas para **Distoyota.com** enfocadas en rendimiento y optimización de SEO técnico.</li>
+                            <li>Integración segura con pasarelas de pago como Stripe e integraciones avanzadas con LLMs.</li>
                         </ul>
                     </div>
                 </div>
+
                 <div class="timeline-item" data-aos="fade-up">
                     <div class="timeline-dot"></div>
                     <div class="timeline-date">2023 - 2025</div>
                     <div class="timeline-content">
-                        <h3>Full-Stack & Systems Architect</h3>
-                        <span class="company">Desarrollador Freelance</span>
-                        <ul>
-                            <li>Diseño de arquitecturas de red complejas y protocolos de enrutamiento (OSPF, BGP, RIP, DNS, DHCP, IPv4/IPv6).</li>
-                            <li>Desarrollo de widgets y componentes frontend interactivos en React, Next.js y JavaScript Vanilla.</li>
-                            <li>Consumo de APIs e integración segura con pasarelas de pago locales (Nequi, Place to Pay).</li>
-                            <li>Diseño y desarrollo completo de un sistema de salud integrado para Telemedicina.</li>
-                            <li>Implementación de soluciones de e-commerce usando React Native, Node.js y MongoDB.</li>
-                            <li>Construcción e integración de chatbots consumiendo API keys de IA para soporte personalizado.</li>
-                            <li>Entrenamiento de modelos de Machine Learning basados en redes neuronales.</li>
-                            <li>Automatización avanzada de procesos de negocios utilizando N8N e integraciones con sistemas Odoo.</li>
-                            <li>Análisis de sentimientos en redes sociales mediante Web Scraping y procesamiento estadístico.</li>
+                        <span class="badge-role">Full-Stack & Systems Architect</span>
+                        <h3>Desarrollador Freelance</h3>
+                        <p class="timeline-desc">Liderando la ingeniería e infraestructura de múltiples aplicaciones a medida.</p>
+                        <ul class="timeline-bullets">
+                            <li>Diseño de arquitecturas de red complejas configurando protocolos de enrutamiento OSPF, BGP, RIP, y DHCP en IPv4/IPv6.</li>
+                            <li>Desarrollo de sistemas integrados de telemedicina y tiendas de comercio electrónico (React Native, Node.js, MongoDB).</li>
+                            <li>Consumo e integración de pasarelas de pago financieras locales (Nequi, Place to Pay).</li>
+                            <li>Entrenamiento de redes neuronales de Machine Learning y desarrollo de análisis de sentimientos con Web Scraping.</li>
+                            <li>Automatización avanzada de procesos de negocios utilizando N8N e integraciones ERP Odoo.</li>
                         </ul>
                     </div>
                 </div>
+
                 <div class="timeline-item" data-aos="fade-up">
                     <div class="timeline-dot"></div>
                     <div class="timeline-date">2024</div>
                     <div class="timeline-content">
-                        <h3>Desarrollador de Software</h3>
-                        <span class="company">EBS-WebDev</span>
-                        <ul>
-                            <li>Mantenimiento correctivo y evolutivo de aplicaciones web empresariales.</li>
-                            <li>Desarrollo de widgets interactivos y consumo estructurado de APIs RESTful.</li>
+                        <span class="badge-role">Desarrollador de Software</span>
+                        <h3>EBS-WebDev</h3>
+                        <p class="timeline-desc">Desarrollo de interfaces e integración de micro-servicios.</p>
+                        <ul class="timeline-bullets">
+                            <li>Creación de widgets reutilizables y consumo optimizado de APIs REST.</li>
+                            <li>Mantenimiento correctivo de aplicaciones de producción empresarial.</li>
                         </ul>
                     </div>
                 </div>
@@ -185,95 +222,100 @@
     <section id="projects" class="projects">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
+                <div class="about-badge">CASOS DE ÉXITO</div>
                 <h2 class="section-title">Proyectos Destacados</h2>
-                <p class="section-subtitle">Sistemas construidos con altos estándares de ingeniería.</p>
+                <p class="section-subtitle">Descubre los proyectos que demuestran mi capacidad técnica.</p>
             </div>
+
             <div class="projects-grid">
                 <!-- Finanzas Pro -->
-                <div class="project-card" data-aos="fade-up">
-                    <div class="project-content">
-                        <div class="project-header">
-                            <i class="fas fa-wallet project-icon"></i>
-                            <h3>Finanzas Pro (Finance App)</h3>
-                        </div>
-                        <p>Dashboard full-stack para gestión financiera personal y familiar. Cuenta con un sistema inteligente de proyección a 12 meses consciente de los ciclos de facturación, cálculo automático de amortizaciones de deuda y flujos de efectivo representados mediante gráficos SVG personalizados.</p>
-                        <div class="project-details-list">
-                            <span><i class="fas fa-check"></i> Supabase Auth & DB</span>
-                            <span><i class="fas fa-check"></i> Modo Demo (LocalStorage)</span>
-                        </div>
-                        <div class="project-tech">
-                            <span class="tech-tag">Next.js 16</span>
-                            <span class="tech-tag">Supabase</span>
-                            <span class="tech-tag">TypeScript</span>
-                            <span class="tech-tag">Vanilla CSS</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/jgarciarf2/finance-app" target="_blank" class="project-link"><i class="fab fa-github"></i> Código en GitHub</a>
+                <div class="project-card tilt-card" data-aos="fade-up">
+                    <div class="project-card-inner">
+                        <div class="project-icon-wrapper"><i class="fas fa-wallet"></i></div>
+                        <div class="project-details">
+                            <h3>Finanzas Pro</h3>
+                            <p>Dashboard full-stack para el control y proyección financiera de hogares. Integra un motor inteligente de amortización de deudas sensible a ciclos de facturación y gráficos SVG vectoriales.</p>
+                            <div class="project-features">
+                                <span><i class="fas fa-database"></i> Supabase / PostgreSQL</span>
+                                <span><i class="fas fa-chart-line"></i> Gráficos SVG Interactivos</span>
+                            </div>
+                            <div class="project-tags">
+                                <span>Next.js 16</span>
+                                <span>TypeScript</span>
+                                <span>Supabase Auth</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="https://github.com/jgarciarf2/finance-app" target="_blank" class="btn-project magnetic"><i class="fab fa-github"></i> Repositorio</a>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Confianza Backend -->
-                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="project-content">
-                        <div class="project-header">
-                            <i class="fas fa-server project-icon"></i>
-                            <h3>Confianza Backend</h3>
-                        </div>
-                        <span class="badge-full-backend">Full Backend</span>
-                        <p>API RESTful de gran escala desarrollada para un simulador financiero. Cuenta con más de 1,000 endpoints implementados, autenticación segura basada en Cookies corporativas en lugar de JWT, cálculos de amortización, lógica de seguros de desgravamen con y sin devolución, y generación de informes oficiales en formato PDF.</p>
-                        <div class="project-details-list">
-                            <span><i class="fas fa-check"></i> Autenticación por Cookies</span>
-                            <span><i class="fas fa-check"></i> 1,000+ Endpoints</span>
-                        </div>
-                        <div class="project-tech">
-                            <span class="tech-tag">Express</span>
-                            <span class="tech-tag">TypeScript</span>
-                            <span class="tech-tag">Prisma ORM</span>
-                            <span class="tech-tag">PostgreSQL</span>
+                <div class="project-card tilt-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-card-inner">
+                        <div class="project-icon-wrapper"><i class="fas fa-server"></i></div>
+                        <div class="project-details">
+                            <div class="project-card-header">
+                                <h3>Confianza Backend</h3>
+                                <span class="badge-tech">1000+ Endpoints</span>
+                            </div>
+                            <p>API RESTful de gran escala para simulación crediticia. Implementa lógica compleja de tasas de seguros de desgravamen con y sin devolución, autenticación segura mediante cookies corporativas y generador dinámico de PDFs.</p>
+                            <div class="project-features">
+                                <span><i class="fas fa-key"></i> Cookies Authentication</span>
+                                <span><i class="fas fa-cogs"></i> Motor Financiero Complejo</span>
+                            </div>
+                            <div class="project-tags">
+                                <span>Express</span>
+                                <span>TypeScript</span>
+                                <span>Prisma ORM</span>
+                                <span>PostgreSQL</span>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- BAT Backend -->
-                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="project-content">
-                        <div class="project-header">
-                            <i class="fas fa-beer project-icon"></i>
-                            <h3>BAT Backend & Anuncios</h3>
-                        </div>
-                        <span class="badge-full-backend">Full Backend</span>
-                        <p>API y base de datos para la gestión radial de cervecerías y geolocalización. Incluye pasarela de pagos integrada con Stripe para transacciones financieras, control preciso de fechas de campañas, y creación/administración de anuncios (Ads) dinámicos según coordenadas y rango geográfico.</p>
-                        <div class="project-details-list">
-                            <span><i class="fas fa-check"></i> Pasarela Stripe</span>
-                            <span><i class="fas fa-check"></i> Geolocalización radial</span>
-                        </div>
-                        <div class="project-tech">
-                            <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">MongoDB</span>
-                            <span class="tech-tag">Mongoose</span>
-                            <span class="tech-tag">Stripe API</span>
+                <div class="project-card tilt-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-card-inner">
+                        <div class="project-icon-wrapper"><i class="fas fa-beer"></i></div>
+                        <div class="project-details">
+                            <div class="project-card-header">
+                                <h3>BAT Backend & Anuncios</h3>
+                                <span class="badge-tech">Stripe Payments</span>
+                            </div>
+                            <p>API y base de datos para la gestión radial de cervecerías y geolocalización. Incluye pasarela de pagos integrada con Stripe para transacciones financieras, control preciso de fechas de campañas, y creación/administración de anuncios (Ads) dinámicos según coordenadas y rango geográfico.</p>
+                            <div class="project-features">
+                                <span><i class="fas fa-map-marked-alt"></i> Búsqueda Radial Geográfica</span>
+                                <span><i class="fas fa-credit-card"></i> Suscripciones Stripe</span>
+                            </div>
+                            <div class="project-tags">
+                                <span>Node.js</span>
+                                <span>MongoDB</span>
+                                <span>Mongoose</span>
+                                <span>Stripe API</span>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- ESEIT Convenios -->
-                <div class="project-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="project-content">
-                        <div class="project-header">
-                            <i class="fas fa-graduation-cap project-icon"></i>
+                <div class="project-card tilt-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="project-card-inner">
+                        <div class="project-icon-wrapper"><i class="fas fa-graduation-cap"></i></div>
+                        <div class="project-details">
                             <h3>ESEIT Convenios Académicos</h3>
-                        </div>
-                        <p>Desarrollo interactivo para la sección de convenios internacionales de la institución educativa. Lógica personalizada para modales dinámicos (popup), agrupamiento estético de logotipos de universidades asociadas y animaciones avanzadas y optimizadas.</p>
-                        <div class="project-details-list">
-                            <span><i class="fas fa-check"></i> WordPress PHP</span>
-                            <span><i class="fas fa-check"></i> Animación con GSAP</span>
-                        </div>
-                        <div class="project-tech">
-                            <span class="tech-tag">PHP</span>
-                            <span class="tech-tag">SCSS</span>
-                            <span class="tech-tag">GSAP</span>
-                            <span class="tech-tag">WordPress</span>
+                            <p>Desarrollo interactivo para la sección de convenios internacionales de la institución educativa. Lógica personalizada para modales dinámicos (popup), agrupamiento estético de logotipos de universidades asociadas y animaciones avanzadas y optimizadas.</p>
+                            <div class="project-features">
+                                <span><i class="fas fa-code"></i> WordPress custom PHP</span>
+                                <span><i class="fas fa-bolt"></i> Animaciones GSAP</span>
+                            </div>
+                            <div class="project-tags">
+                                <span>PHP</span>
+                                <span>SCSS</span>
+                                <span>GSAP</span>
+                                <span>WordPress</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -285,91 +327,89 @@
     <section id="skills" class="skills">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
+                <div class="about-badge">CAPACIDADES</div>
                 <h2 class="section-title">Habilidades Técnicas</h2>
-                <p class="section-subtitle">Dominio tecnológico enfocado en la excelencia y arquitectura limpia.</p>
+                <p class="section-subtitle">El stack tecnológico y patrones arquitectónicos que domino.</p>
             </div>
-            <div class="skills-content">
-                <div class="skills-category" data-aos="fade-right">
-                    <h3>Tecnologías & Lenguajes</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item"><span>JS / TS / Node.js</span></div>
-                        <div class="skill-item"><span>PHP (WordPress / Custom Themes / PHP Puro)</span></div>
-                        <div class="skill-item"><span>Python (FastAPI / Django)</span></div>
-                        <div class="skill-item"><span>Java (Spring Boot)</span></div>
-                        <div class="skill-item"><span>React / Next.js</span></div>
-                        <div class="skill-item"><span>PostgreSQL / MySQL / MongoDB / Oracle</span></div>
-                        <div class="skill-item"><span>Docker & Git / GitHub / GitLab</span></div>
-                        <div class="skill-item"><span>Swagger & Linux CLI</span></div>
+
+            <div class="skills-grid-wrapper">
+                <div class="skills-cat-card" data-aos="fade-right">
+                    <h3>Backend & Databases</h3>
+                    <div class="skill-tags-group">
+                        <span>Node.js</span>
+                        <span>Express</span>
+                        <span>TypeScript</span>
+                        <span>PHP (WordPress / Temas)</span>
+                        <span>Python (FastAPI / Django)</span>
+                        <span>Java (Spring Boot)</span>
+                        <span>PostgreSQL</span>
+                        <span>MongoDB</span>
+                        <span>MySQL</span>
+                        <span>Oracle</span>
+                        <span>Prisma ORM</span>
+                        <span>Mongoose</span>
                     </div>
                 </div>
 
-                <div class="skills-category" data-aos="fade-up">
-                    <h3>Patrones & Principios</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item"><span>SOLID, DRY, KISS</span></div>
-                        <div class="skill-item"><span>Arquitectura de Microservicios</span></div>
-                        <div class="skill-item"><span>Monolítico Modular</span></div>
-                        <div class="skill-item"><span>DDD (Domain-Driven Design)</span></div>
-                        <div class="skill-item"><span>Clean Architecture</span></div>
-                        <div class="skill-item"><span>Patrones Creacionales (Singleton, Factory)</span></div>
+                <div class="skills-cat-card" data-aos="fade-up">
+                    <h3>Arquitectura & Patrones</h3>
+                    <div class="skill-tags-group">
+                        <span>Microservicios</span>
+                        <span>SOLID Principles</span>
+                        <span>DDD (Domain-Driven Design)</span>
+                        <span>Clean Architecture</span>
+                        <span>Clean Code</span>
+                        <span>KISS & DRY</span>
+                        <span>Design Patterns (Factory / Singleton)</span>
+                        <span>Monolítico Modular</span>
                     </div>
                 </div>
 
-                <div class="skills-category" data-aos="fade-left">
-                    <h3>Modelado & Metodologías</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item"><span>Modelado UML</span></div>
-                        <div class="skill-item"><span>Modelado BPMN</span></div>
-                        <div class="skill-item"><span>Diagramas de Flujo y Procesos</span></div>
-                        <div class="skill-item"><span>Diagramas de Clases y Actividades</span></div>
-                        <div class="skill-item"><span>Integraciones IA & Chatbots</span></div>
-                        <div class="skill-item"><span>Pasarelas Stripe, Nequi, Place to Pay</span></div>
+                <div class="skills-cat-card" data-aos="fade-left">
+                    <h3>DevOps & Integraciones</h3>
+                    <div class="skill-tags-group">
+                        <span>Git & GitHub / GitLab</span>
+                        <span>Docker</span>
+                        <span>Stripe (Pasarelas de Pago)</span>
+                        <span>Zapier & N8N (Automatización)</span>
+                        <span>SEO Técnico</span>
+                        <span>Swagger Documentation</span>
+                        <span>Administración de Servidores</span>
+                        <span>Linux CLI</span>
+                        <span>Configuración de Redes (OSPF/BGP)</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Education Section -->
-    <section id="education" class="skills" style="background-color: var(--bg-primary);">
+    <!-- Education & Certifications Section -->
+    <section id="education" class="education">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
+                <div class="about-badge">FORMACIÓN</div>
                 <h2 class="section-title">Educación & Certificaciones</h2>
-                <p class="section-subtitle">Mi formación académica y especializaciones.</p>
+                <p class="section-subtitle">Mi camino de aprendizaje formal y especializado.</p>
             </div>
-            <div class="skills-content">
-                <div class="skills-category" data-aos="fade-right">
-                    <h3>Educación Formal</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <div>
-                                <strong>Ingeniería en Sistemas y Computación</strong>
-                                <p style="font-size: 0.85rem; color: var(--text-secondary);">Universidad de Caldas (2022 - 2027)</p>
-                            </div>
-                        </div>
-                    </div>
+
+            <div class="education-grid">
+                <div class="edu-card" data-aos="fade-right">
+                    <span class="edu-icon"><i class="fas fa-university"></i></span>
+                    <h3>Ingeniería en Sistemas y Computación</h3>
+                    <p class="edu-meta">Universidad de Caldas (2022 - 2027) | 8vo Semestre</p>
+                    <p class="edu-desc">Enfoque en ingeniería de software, arquitectura de sistemas y redes complejas.</p>
                 </div>
-                <div class="skills-category" data-aos="fade-up">
-                    <h3>Bootcamps</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <div>
-                                <strong>Bootcamp en Ciberseguridad</strong>
-                                <p style="font-size: 0.85rem; color: var(--text-secondary);">MinTIC / Universidad de Caldas</p>
-                            </div>
-                        </div>
-                    </div>
+                <div class="edu-card" data-aos="fade-up">
+                    <span class="edu-icon"><i class="fas fa-user-shield"></i></span>
+                    <h3>Bootcamp en Ciberseguridad</h3>
+                    <p class="edu-meta">MinTIC / Universidad de Caldas</p>
+                    <p class="edu-desc">Especialización en análisis de vulnerabilidades, seguridad defensiva y auditorías.</p>
                 </div>
-                <div class="skills-category" data-aos="fade-left">
-                    <h3>Certificaciones</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <div>
-                                <strong>Workshop ISO 27001</strong>
-                                <p style="font-size: 0.85rem; color: var(--text-secondary);">Seguridad de la Información</p>
-                            </div>
-                        </div>
-                    </div>
+                <div class="edu-card" data-aos="fade-left">
+                    <span class="edu-icon"><i class="fas fa-file-contract-agreement"></i></span>
+                    <h3>Workshop ISO 27001</h3>
+                    <p class="edu-meta">Seguridad de la Información</p>
+                    <p class="edu-desc">Diseño y auditoría de Sistemas de Gestión de Seguridad de la Información (SGSI).</p>
                 </div>
             </div>
         </div>
@@ -378,46 +418,53 @@
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <h2 class="section-title">Contacto</h2>
-                <p class="section-subtitle">¿Tienes algún proyecto en mente? ¡Trabajemos juntos!</p>
-            </div>
-            <div class="contact-content">
-                <div class="contact-info" data-aos="fade-right">
-                    <h3>¡Conectemos!</h3>
-                    <p>Si buscas un desarrollador enfocado en calidad, rendimiento y buenas prácticas, no dudes en escribirme.</p>
-                    <div class="contact-details">
-                        <div class="contact-item">
+            <div class="contact-grid">
+                <div class="contact-header-box" data-aos="fade-right">
+                    <div class="about-badge">CONTACTAR</div>
+                    <h2 class="section-title">¿Tienes un proyecto en mente?</h2>
+                    <p class="section-subtitle">Hablemos para diseñar y construir sistemas estables, escalables y con rendimiento superior.</p>
+                    
+                    <div class="contact-direct-info">
+                        <div class="c-info-item">
                             <i class="fas fa-envelope"></i>
                             <div>
-                                <h4>Email</h4>
-                                <p><a href="mailto:jgarciarf216@gmail.com">jgarciarf216@gmail.com</a></p>
+                                <span>Email</span>
+                                <a href="mailto:jgarciarf216@gmail.com" class="magnetic">jgarciarf216@gmail.com</a>
                             </div>
                         </div>
-                        <div class="contact-item">
+                        <div class="c-info-item">
                             <i class="fas fa-map-marker-alt"></i>
                             <div>
-                                <h4>Ubicación</h4>
+                                <span>Ubicación</span>
                                 <p>Manizales, Caldas, Colombia</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <form class="contact-form" data-aos="fade-left">
-                    <div class="form-group">
-                        <input type="text" placeholder="Tu Nombre" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" placeholder="Tu Email" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" placeholder="Asunto" required>
-                    </div>
-                    <div class="form-group">
-                        <textarea placeholder="Tu Mensaje" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
-                </form>
+
+                <div class="contact-form-box" data-aos="fade-left">
+                    <form class="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Nombre</label>
+                                <input type="text" id="name" placeholder="Tu Nombre" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" placeholder="Tu Email" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Asunto</label>
+                            <input type="text" id="subject" placeholder="Asunto del mensaje" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensaje</label>
+                            <textarea id="message" rows="4" placeholder="Tu Mensaje" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary magnetic">Enviar Mensaje</button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
@@ -425,12 +472,13 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <p>&copy; 2026 ArfDev - Todos los derechos reservados.</p>
-                <div class="footer-social">
-                    <a href="mailto:jgarciarf216@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
-                    <a href="https://github.com/jgarciarf2" class="social-link" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://linkedin.com/in/jgarciarf2" class="social-link" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <div class="footer-inner">
+                <span class="footer-logo">Juan F. García</span>
+                <p>&copy; 2026. Todos los derechos reservados. Diseñado con estilo minimalista.</p>
+                <div class="footer-social-links">
+                    <a href="mailto:jgarciarf216@gmail.com" class="magnetic"><i class="fas fa-envelope"></i></a>
+                    <a href="https://github.com/jgarciarf2" class="magnetic" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/jgarciarf2" class="magnetic" target="_blank"><i class="fab fa-linkedin"></i></a>
                 </div>
             </div>
         </div>

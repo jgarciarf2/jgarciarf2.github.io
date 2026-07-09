@@ -139,46 +139,24 @@ document.addEventListener('DOMContentLoaded', function () {
                         features: "12-month projections, dynamic amortization, custom interactive charts"
                     },
                     {
-                        name: "Confianza Backend",
+                        name: "Confianza",
                         type: "Enterprise REST API",
                         tech: ["Express", "TypeScript", "Prisma ORM", "PostgreSQL"],
                         features: "1000+ endpoints, secure Cookie auth (no JWT), desgravamen simulation"
                     },
                     {
-                        name: "BAT Backend & Anuncios",
+                        name: "Brewery Adventure Tour",
                         type: "Full Backend & Geolocalización",
                         tech: ["Node.js", "MongoDB", "Mongoose", "Stripe API"],
                         features: "Stripe subscriptions, geo radial query, dynamic Ads campaign control"
                     },
                     {
-                        name: "ESEIT Convenios Académicos",
+                        name: "ESEIT",
                         type: "Custom Theme & Interactive Front-End",
                         tech: ["PHP", "SCSS", "GSAP Animations", "WordPress"],
                         features: "Custom WordPress templates, interactive GSAP partner modals"
                     }
                 ]
-            }
-        },
-        simulador: {
-            command: "curl -X POST https://api.jgarciarf2.dev/v1/simulador-credito \\\\\n  -H 'Content-Type: application/json' \\\\\n  -d '{\"monto\": 5000, \"cuotas\": 12, \"seguro\": \"con-devolucion\"}'",
-            data: {
-                status: 201,
-                success: true,
-                simulation: {
-                    monto_solicitado: 5000.00,
-                    moneda: "PEN",
-                    plazo_meses: 12,
-                    tasa_efectiva_mensual: "1.408%",
-                    seguro_desgravamen: {
-                        tipo: "con-devolucion",
-                        tasa_devolucion: "0.14079%"
-                    },
-                    cronograma_resumido: [
-                        { cuota: 1, saldo_inicial: 5000.00, amortizacion: 385.50, interes: 70.40, desgravamen: 7.04, total_cuota: 462.94 },
-                        { cuota: 2, saldo_inicial: 4614.50, amortizacion: 390.93, interes: 64.97, desgravamen: 6.50, total_cuota: 462.40 },
-                        { cuota: "...", nota: "Cronograma completo de 12 cuotas calculado mediante fórmulas estándar" }
-                    ]
-                }
             }
         },
         skills: {
@@ -212,6 +190,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function renderOutput(tabKey) {
         const target = apiOutputs[tabKey];
+        if (!target) return;
         terminalCmd.textContent = target.command;
         
         // Show temporary loading indicator

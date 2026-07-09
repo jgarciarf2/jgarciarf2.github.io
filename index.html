@@ -23,7 +23,7 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <div class="nav-logo magnetic">
+            <div class="nav-logo">
                 <span class="logo-text">Juan F. García</span>
             </div>
             <ul class="nav-menu">
@@ -133,9 +133,6 @@
                         <button class="terminal-tab active magnetic" data-endpoint="proyectos">
                             <span class="method get">GET</span> /proyectos
                         </button>
-                        <button class="terminal-tab magnetic" data-endpoint="simulador">
-                            <span class="method post">POST</span> /simular-credito
-                        </button>
                         <button class="terminal-tab magnetic" data-endpoint="skills">
                             <span class="method get">GET</span> /habilidades
                         </button>
@@ -178,7 +175,7 @@
                             <li>Desarrollo de APIs RESTful escalables con Node.js, TypeScript, Python y PHP, documentadas detalladamente con **Swagger**.</li>
                             <li>Refactorización avanzada de consultas y optimización de latencia en bases de datos relacionales y no relacionales.</li>
                             <li>Implementación de arquitecturas de contenedores con **Docker** e integración de flujos CI/CD.</li>
-                            <li>Diseño de landing pages avanzadas para **Distoyota.com** enfocadas en rendimiento y optimización de SEO técnico.</li>
+                            <li>Diseño de landing pages avanzadas para <a href="https://distoyota.com" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: 600;">Distoyota.com</a> enfocadas en rendimiento y optimización de SEO técnico.</li>
                             <li>Integración segura con pasarelas de pago como Stripe e integraciones avanzadas con LLMs.</li>
                         </ul>
                     </div>
@@ -193,7 +190,7 @@
                         <p class="timeline-desc">Liderando la ingeniería e infraestructura de múltiples aplicaciones a medida.</p>
                         <ul class="timeline-bullets">
                             <li>Diseño de arquitecturas de red complejas configurando protocolos de enrutamiento OSPF, BGP, RIP, y DHCP en IPv4/IPv6.</li>
-                            <li>Desarrollo de sistemas integrados de telemedicina y tiendas de comercio electrónico (React Native, Node.js, MongoDB).</li>
+                            <li>Desarrollo de widgets y componentes frontend interactivos en React, Next.js y JavaScript Vanilla.</li>
                             <li>Consumo e integración de pasarelas de pago financieras locales (Nequi, Place to Pay).</li>
                             <li>Entrenamiento de redes neuronales de Machine Learning y desarrollo de análisis de sentimientos con Web Scraping.</li>
                             <li>Automatización avanzada de procesos de negocios utilizando N8N e integraciones ERP Odoo.</li>
@@ -231,7 +228,10 @@
                 <!-- Finanzas Pro -->
                 <div class="project-card tilt-card" data-aos="fade-up">
                     <div class="project-card-inner">
-                        <div class="project-icon-wrapper"><i class="fas fa-wallet"></i></div>
+                        <div class="project-thumbnail-container">
+                            <img src="./resources/project-finance.png" alt="Finanzas Pro Thumbnail" class="project-thumbnail" onerror="this.style.display='none'">
+                            <div class="project-thumbnail-fallback"><i class="fas fa-wallet"></i></div>
+                        </div>
                         <div class="project-details">
                             <h3>Finanzas Pro</h3>
                             <p>Dashboard full-stack para el control y proyección financiera de hogares. Integra un motor inteligente de amortización de deudas sensible a ciclos de facturación y gráficos SVG vectoriales.</p>
@@ -245,22 +245,26 @@
                                 <span>Supabase Auth</span>
                             </div>
                             <div class="project-actions">
+                                <a href="https://finance-app-chi-woad.vercel.app" target="_blank" class="btn-project magnetic" style="margin-right: 20px;"><i class="fas fa-external-link-alt"></i> Demo en Vivo</a>
                                 <a href="https://github.com/jgarciarf2/finance-app" target="_blank" class="btn-project magnetic"><i class="fab fa-github"></i> Repositorio</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Confianza Backend -->
+                <!-- Confianza -->
                 <div class="project-card tilt-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="project-card-inner">
-                        <div class="project-icon-wrapper"><i class="fas fa-server"></i></div>
+                        <div class="project-thumbnail-container">
+                            <img src="./resources/project-confianza.png" alt="Confianza Thumbnail" class="project-thumbnail" onerror="this.style.display='none'">
+                            <div class="project-thumbnail-fallback"><i class="fas fa-server"></i></div>
+                        </div>
                         <div class="project-details">
                             <div class="project-card-header">
-                                <h3>Confianza Backend</h3>
+                                <h3>Confianza</h3>
                                 <span class="badge-tech">1000+ Endpoints</span>
                             </div>
-                            <p>API RESTful de gran escala para simulación crediticia. Implementa lógica compleja de tasas de seguros de desgravamen con y sin devolución, autenticación segura mediante cookies corporativas y generador dinámico de PDFs.</p>
+                            <p>API RESTful de gran escala desarrollada para Financiera Confianza, entidad financiera líder en el microdesarrollo en Perú. Implementa lógica compleja de tasas de seguros de desgravamen, autenticación mediante cookies y generador dinámico de PDFs.</p>
                             <div class="project-features">
                                 <span><i class="fas fa-key"></i> Cookies Authentication</span>
                                 <span><i class="fas fa-cogs"></i> Motor Financiero Complejo</span>
@@ -271,17 +275,23 @@
                                 <span>Prisma ORM</span>
                                 <span>PostgreSQL</span>
                             </div>
+                            <div class="project-actions">
+                                <a href="https://confianza.pe" target="_blank" class="btn-project magnetic"><i class="fas fa-external-link-alt"></i> Visitar Sitio</a>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- BAT Backend -->
+                <!-- Brewery Adventure Tour -->
                 <div class="project-card tilt-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="project-card-inner">
-                        <div class="project-icon-wrapper"><i class="fas fa-beer"></i></div>
+                        <div class="project-thumbnail-container">
+                            <img src="./resources/project-bat.png" alt="Brewery Adventure Tour Thumbnail" class="project-thumbnail" onerror="this.style.display='none'">
+                            <div class="project-thumbnail-fallback"><i class="fas fa-beer"></i></div>
+                        </div>
                         <div class="project-details">
                             <div class="project-card-header">
-                                <h3>BAT Backend & Anuncios</h3>
+                                <h3>Brewery Adventure Tour</h3>
                                 <span class="badge-tech">Stripe Payments</span>
                             </div>
                             <p>API y base de datos para la gestión radial de cervecerías y geolocalización. Incluye pasarela de pagos integrada con Stripe para transacciones financieras, control preciso de fechas de campañas, y creación/administración de anuncios (Ads) dinámicos según coordenadas y rango geográfico.</p>
@@ -295,16 +305,22 @@
                                 <span>Mongoose</span>
                                 <span>Stripe API</span>
                             </div>
+                            <div class="project-actions">
+                                <a href="https://breweryadventuretour.com" target="_blank" class="btn-project magnetic"><i class="fas fa-external-link-alt"></i> Visitar Sitio</a>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- ESEIT Convenios -->
+                <!-- ESEIT -->
                 <div class="project-card tilt-card" data-aos="fade-up" data-aos-delay="300">
                     <div class="project-card-inner">
-                        <div class="project-icon-wrapper"><i class="fas fa-graduation-cap"></i></div>
+                        <div class="project-thumbnail-container">
+                            <img src="./resources/project-eseit.png" alt="ESEIT Thumbnail" class="project-thumbnail" onerror="this.style.display='none'">
+                            <div class="project-thumbnail-fallback"><i class="fas fa-graduation-cap"></i></div>
+                        </div>
                         <div class="project-details">
-                            <h3>ESEIT Convenios Académicos</h3>
+                            <h3>ESEIT</h3>
                             <p>Desarrollo interactivo para la sección de convenios internacionales de la institución educativa. Lógica personalizada para modales dinámicos (popup), agrupamiento estético de logotipos de universidades asociadas y animaciones avanzadas y optimizadas.</p>
                             <div class="project-features">
                                 <span><i class="fas fa-code"></i> WordPress custom PHP</span>
@@ -315,6 +331,9 @@
                                 <span>SCSS</span>
                                 <span>GSAP</span>
                                 <span>WordPress</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="https://www.eseit.edu.co" target="_blank" class="btn-project magnetic"><i class="fas fa-external-link-alt"></i> Visitar Sitio</a>
                             </div>
                         </div>
                     </div>

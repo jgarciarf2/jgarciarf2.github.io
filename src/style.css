@@ -676,25 +676,56 @@ section {
 }
 
 .project-card-inner {
-  padding: 48px;
+  padding: 0;
   display: flex;
   flex-direction: column;
   height: 100%;
   transform: translateZ(20px);
+  width: 100%;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
 }
 
-.project-icon-wrapper {
-  width: 60px;
-  height: 60px;
-  background-color: rgba(255, 255, 255, 0.03);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-md);
+/* Project Thumbnail Styles */
+.project-thumbnail-container {
+  width: 100%;
+  height: 200px;
+  position: relative;
+  background-color: var(--bg-tertiary);
+  border-bottom: 1px solid var(--border-color);
+  overflow: hidden;
+}
+
+.project-thumbnail {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-thumbnail {
+  transform: scale(1.05);
+}
+
+.project-thumbnail-fallback {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.6rem;
+  font-size: 3rem;
   color: var(--accent);
-  margin-bottom: 28px;
+  background: radial-gradient(circle, rgba(0, 113, 227, 0.08) 0%, rgba(0,0,0,0) 80%);
+}
+
+.project-details {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 .project-details h3 {
@@ -728,14 +759,14 @@ section {
   color: var(--text-secondary);
   font-size: 1.05rem;
   line-height: 1.6;
-  margin-bottom: 28px;
+  margin-bottom: 24px;
 }
 
 .project-features {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  margin-bottom: 28px;
+  margin-bottom: 24px;
   font-size: 0.85rem;
   color: var(--text-primary);
 }
@@ -749,7 +780,7 @@ section {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-bottom: 32px;
+  margin-bottom: 28px;
 }
 
 .project-tags span {
@@ -758,6 +789,13 @@ section {
   font-size: 0.75rem;
   padding: 6px 14px;
   border-radius: var(--radius-pill);
+}
+
+.project-actions {
+  margin-top: auto;
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
 }
 
 .btn-project {

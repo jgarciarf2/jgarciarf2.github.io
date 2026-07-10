@@ -57,14 +57,14 @@ export default function App() {
       link: 'https://simulador.confianza.pe/simulador-credito',
       badge: '100% Backend',
       desc: 'Desarrollo backend para el simulador oficial de créditos de Financiera Confianza en Perú. Responsable de la lógica de autenticación segura por cookies corporativas, protección de endpoints y cálculo de desgravamen con/sin devolución.',
-      features: ['Autenticación por Cookies', 'Desgravamen & Devolution Rate'],
+      features: ['Autenticación por Cookies', 'Adaptación y aplicación de cálculos matemáticos de seguros e intereses'],
       tech: ['Express', 'TypeScript', 'Prisma ORM', 'PostgreSQL'],
       iconClass: 'fas fa-calculator',
       thumbnail: '/resources/project-simulador-confianza.png'
     },
     {
       id: 'confianza-pe',
-      name: 'Confianza.pe',
+      name: 'Confianza Perú',
       link: 'https://confianza.pe',
       desc: 'Mantenimiento y desarrollo web para la plataforma principal de Financiera Confianza. Creación de landing pages corporativas, gestión y control de contenidos dinámicos (multimedia, noticias, productos y artículos).',
       features: ['Creación de Landings', 'Gestión de Contenido & Multimedia'],
@@ -123,14 +123,14 @@ export default function App() {
       link: 'https://simulador.confianza.pe/simulador-credito',
       badge: '100% Backend',
       desc: 'Backend development for the official credit simulator of Financiera Confianza in Peru. Responsible for secure authentication logic via corporate cookies, endpoint protection, and desgravamen calculation with/without devolution.',
-      features: ['Cookie Authentication', 'Desgravamen & Devolution Rate'],
+      features: ['Cookie Authentication', 'Adaptación y aplicación de cálculos matemáticos de seguros e intereses'],
       tech: ['Express', 'TypeScript', 'Prisma ORM', 'PostgreSQL'],
       iconClass: 'fas fa-calculator',
       thumbnail: '/resources/project-simulador-confianza.png'
     },
     {
       id: 'confianza-pe',
-      name: 'Confianza.pe',
+      name: 'Confianza Perú',
       link: 'https://confianza.pe',
       desc: 'Web maintenance and development for the main platform of Financiera Confianza. Creation of corporate landing pages, management, and control of dynamic content (multimedia, news, products, and articles).',
       features: ['Landing Page Creation', 'Content & Multimedia Management'],

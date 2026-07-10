@@ -389,11 +389,6 @@ export default function App() {
                 {lang === 'es' ? 'Contacto' : 'Contact'}
               </a>
             </li>
-            <li className="nav-item">
-              <a href="/resources/CV.pdf" download="Juan_Garcia_CV.pdf" className="nav-link magnetic" style={{ color: 'var(--accent)', fontWeight: 600 }} onClick={() => setIsMenuOpen(false)}>
-                <i className="fas fa-file-pdf" style={{ marginRight: '6px' }}></i> {lang === 'es' ? 'CV' : 'CV'}
-              </a>
-            </li>
           </ul>
           <div className="nav-actions">
             <button onClick={toggleLanguage} className="lang-toggle-btn magnetic" aria-label="Cambiar idioma" style={{ marginRight: '10px', background: 'transparent', border: '1px solid var(--border-color)', color: 'var(--text-primary)', padding: '6px 12px', borderRadius: 'var(--radius-md)', fontSize: '0.8rem', cursor: 'pointer', fontWeight: 600 }}>
@@ -440,12 +435,6 @@ export default function App() {
               <a href="/resources/CV.pdf" download="Juan_Garcia_CV.pdf" className="btn btn-secondary magnetic" style={{ borderColor: 'var(--accent)', color: 'var(--accent)' }}>
                 <i className="fas fa-download" style={{ marginRight: '8px' }}></i> {lang === 'es' ? 'Descargar CV' : 'Download CV'}
               </a>
-            </div>
-            <div className="hero-social">
-              <a href="mailto:jgarciarf216@gmail.com" className="social-link magnetic" title="Email"><i className="fas fa-envelope"></i></a>
-              <a href="https://github.com/jgarciarf2" className="social-link magnetic" target="_blank" title="GitHub"><i className="fab fa-github"></i></a>
-              <a href="https://linkedin.com/in/jgarciarf2" className="social-link magnetic" target="_blank" title="LinkedIn"><i className="fab fa-linkedin"></i></a>
-              <a href="https://wa.me/573023217019" className="social-link magnetic" target="_blank" title="WhatsApp"><i className="fab fa-whatsapp"></i></a>
             </div>
           </div>
         </div>
@@ -642,9 +631,6 @@ export default function App() {
                         (e.target as HTMLImageElement).style.display = 'none';
                       }}
                     />
-                    <div className="project-thumbnail-fallback">
-                      <i className={project.iconClass}></i>
-                    </div>
                   </div>
                   <div className="project-details">
                     <div className="project-card-header">
@@ -839,15 +825,6 @@ export default function App() {
                   <div>
                     <span>{lang === 'es' ? 'Ubicación' : 'Location'}</span>
                     <p>{lang === 'es' ? 'Manizales, Caldas, Colombia' : 'Manizales, Caldas, Colombia'}</p>
-                  </div>
-                </div>
-                <div className="c-info-item">
-                  <i className="fas fa-file-pdf"></i>
-                  <div>
-                    <span>Curriculum Vitae</span>
-                    <a href="/resources/CV.pdf" download="Juan_Garcia_CV.pdf" className="magnetic" style={{ color: 'var(--accent)', fontWeight: 600 }}>
-                      {lang === 'es' ? 'Descargar CV (PDF)' : 'Download CV (PDF)'}
-                    </a>
                   </div>
                 </div>
               </div>

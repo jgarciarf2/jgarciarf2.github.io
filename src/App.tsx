@@ -158,9 +158,8 @@ export default function App() {
         status: 200,
         success: true,
         data: {
-          backend: ['JS/TS', 'PHP', 'Python (FastAPI / Django)', 'Java (Spring Boot)', 'PostgreSQL', 'MongoDB', 'MySQL', 'Oracle'],
-          frontend: ['HTML', 'CSS', 'JavaScript', 'TypeScript', 'JSX', 'TSX', 'React', 'React Native', 'Angular', 'Tailwind CSS'],
-          data_science: ['Machine Learning', 'Redes Neuronales', 'Redes de Datos', 'Análisis de Datos', 'Algoritmos de Predicción', 'Algoritmos de Análisis de Datos', 'Modelado Predictivo'],
+          fullstack: ['Backend: Node.js, Express, PHP, Python, Java', 'Frontend: HTML, CSS, JS, TS, JSX, TSX, React, Angular, React Native, Tailwind'],
+          data_science: ['Machine Learning', 'Redes Neuronales', 'Análisis y Predicción', 'Python', 'R', 'Pandas / NumPy'],
           devops_and_tools: ['Docker', 'Git/GitHub/GitLab', 'Stripe API', 'Zapier & N8N', 'SEO Técnico', 'Linux CLI']
         }
       }
@@ -256,7 +255,7 @@ export default function App() {
       <nav className="navbar">
         <div className="nav-container">
           <div className="nav-logo">
-            <span className="logo-text">Juan F. García</span>
+            <span className="logo-text">jgarciarf2</span>
           </div>
           <ul className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
             <li className="nav-item">
@@ -302,7 +301,7 @@ export default function App() {
           <div className="hero-content">
             <div className="hero-badge">Ingeniero de Sistemas (8vo Semestre)</div>
             <h1 className="hero-title">Diseñando experiencias frontend y soluciones inteligentes.<br /><span>Creando software de alto nivel.</span></h1>
-            <p className="hero-subtitle">Especializado en desarrollo Backend, Frontend, machine learning, análisis de datos, optimización de bases de datos y principios SOLID / DDD.</p>
+            <p className="hero-subtitle">Especializado en desarrollo backend, buenas prácticas, seguridad, calidad de software, optimización de bases de datos y entrega confiable de soluciones sólidas.</p>
             <div className="hero-buttons">
               <a href="#playground" className="btn btn-primary magnetic">Probar API Playground</a>
               <a href="#projects" className="btn btn-secondary magnetic">Ver Proyectos</a>
@@ -325,10 +324,10 @@ export default function App() {
               <div className="about-badge">SOBRE MÍ</div>
               <h2 className="section-title">Perfil Técnico</h2>
               <p className="about-text">
-                Como estudiante de Ingeniería en Sistemas y Computación en la Universidad de Caldas, me enfoco en crear soluciones frontend modernas, interfaces responsivas y sistemas backend limpios, eficientes y seguros. Mi enfoque de desarrollo se basa en principios de ingeniería sólidos como <strong>SOLID</strong>, <strong>DDD (Domain-Driven Design)</strong> y <strong>Clean Code</strong>.
+                Como estudiante de Ingeniería en Sistemas y Computación en la Universidad de Caldas, me enfoco en construir soluciones backend robustas, seguras y mantenibles, con especial cuidado en las buenas prácticas, el control del código y la calidad del software. Mi forma de trabajar se apoya en <strong>SOLID</strong>, <strong>Clean Code</strong> y una mentalidad de mejora continua.
               </p>
               <p className="about-text">
-                Cuento con experiencia en optimización de bases de datos relacionales y no relacionales, machine learning, análisis de datos, redes neuronales, infraestructura en la nube, despliegue de microservicios contenerizados y automatizaciones de flujos de trabajo corporativos para impulsar la eficiencia empresarial.
+                Cuento con experiencia en optimización de bases de datos relacionales y no relacionales, desarrollo de APIs, seguridad de aplicaciones, automatización de procesos y despliegue de soluciones confiables. Me interesa seguir aprendiendo, asumir responsabilidad técnica y entregar trabajo de alta calidad con compromiso y consistencia.
               </p>
               <div className="languages-box">
                 <span className="lang-tag"><strong>Inglés:</strong> Avanzado</span>
@@ -337,19 +336,19 @@ export default function App() {
             </div>
             <div className="about-cards">
               <div className="profile-feature-card">
-                <div className="feature-icon"><i className="fas fa-laptop-code"></i></div>
-                <h3>Frontend Moderno</h3>
-                <p>Diseño e implementación de interfaces con HTML, CSS, JS, TS, JSX, TSX, React, Angular, React Native y Tailwind CSS.</p>
+                <div className="feature-icon"><i className="fas fa-server"></i></div>
+                <h3>Backend Sólido</h3>
+                <p>Desarrollo de APIs limpias, mantenibles y escalables con foco en control, estabilidad y buenas prácticas.</p>
               </div>
               <div className="profile-feature-card">
-                <div className="feature-icon"><i className="fas fa-brain"></i></div>
-                <h3>Machine Learning & Datos</h3>
-                <p>Análisis de datos, redes neuronales y algoritmos de predicción para resolver problemas con modelos inteligentes.</p>
+                <div className="feature-icon"><i className="fas fa-shield-alt"></i></div>
+                <h3>Seguridad & Calidad</h3>
+                <p>Construcción responsable, validación cuidadosa y enfoque en confiabilidad, calidad y reducción de riesgos.</p>
               </div>
               <div className="profile-feature-card">
-                <div className="feature-icon"><i className="fas fa-database"></i></div>
-                <h3>Datos & Rendimiento</h3>
-                <p>Optimización de consultas, modelado de datos escalables y performance en aplicaciones distribuidas.</p>
+                <div className="feature-icon"><i className="fas fa-chart-line"></i></div>
+                <h3>Crecimiento Continuo</h3>
+                <p>Compromiso con aprender, mejorar procesos y mantener una evolución técnica constante en cada proyecto.</p>
               </div>
             </div>
           </div>
@@ -530,26 +529,13 @@ export default function App() {
 
           <div className="skills-grid-wrapper">
             <div className="skills-cat-card">
-              <h3>Backend & Databases</h3>
+              <h3>Backend & Frontend</h3>
               <div className="skill-tags-group">
                 <span>Node.js</span>
                 <span>Express</span>
-                <span>TypeScript</span>
                 <span>PHP</span>
-                <span>Python3</span>
+                <span>Python</span>
                 <span>Java</span>
-                <span>PostgreSQL</span>
-                <span>MongoDB</span>
-                <span>MySQL</span>
-                <span>Oracle</span>
-                <span>Prisma ORM</span>
-                <span>Mongoose</span>
-              </div>
-            </div>
-
-            <div className="skills-cat-card">
-              <h3>Frontend</h3>
-              <div className="skill-tags-group">
                 <span>HTML</span>
                 <span>CSS</span>
                 <span>JavaScript</span>
@@ -559,34 +545,35 @@ export default function App() {
                 <span>React</span>
                 <span>React Native</span>
                 <span>Angular</span>
+                <span>SEO Técnico</span>
                 <span>Tailwind CSS</span>
               </div>
             </div>
 
             <div className="skills-cat-card">
-              <h3>Machine Learning & Análisis de Datos</h3>
+              <h3>Machine Learning & Datos</h3>
               <div className="skill-tags-group">
                 <span>Machine Learning</span>
                 <span>Redes Neuronales</span>
-                <span>Redes de Datos</span>
-                <span>Análisis de Datos</span>
-                <span>Algoritmos de Análisis de Datos</span>
-                <span>Algoritmos de Predicción</span>
-                <span>Modelado Predictivo</span>
+                <span>Análisis y Predicción</span>
                 <span>Python</span>
-                <span>R</span>
                 <span>Pandas / NumPy</span>
               </div>
             </div>
 
             <div className="skills-cat-card">
-              <h3>DevOps & Integraciones</h3>
+              <h3>Databases & DevOps</h3>
               <div className="skill-tags-group">
+                <span>PostgreSQL</span>
+                <span>MongoDB</span>
+                <span>MySQL</span>
+                <span>Oracle</span>
+                <span>Prisma ORM</span>
+                <span>Mongoose</span>
                 <span>Git & GitHub / GitLab</span>
                 <span>Docker</span>
                 <span>Stripe (Pasarelas de Pago)</span>
                 <span>Zapier & N8N (Automatización)</span>
-                <span>SEO Técnico</span>
                 <span>Swagger Documentation</span>
                 <span>Administración de Servidores</span>
                 <span>Linux CLI</span>
@@ -687,7 +674,7 @@ export default function App() {
       <footer className="footer">
         <div className="container">
           <div className="footer-inner">
-            <span className="footer-logo">Juan F. García</span>
+            <span className="footer-logo">jgarciarf2</span>
             <p>&copy; 2026. Todos los derechos reservados. Diseñado con estilo minimalista.</p>
             <div className="footer-social-links">
               <a href="mailto:jgarciarf216@gmail.com" className="magnetic"><i className="fas fa-envelope"></i></a>

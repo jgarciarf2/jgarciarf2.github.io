@@ -299,11 +299,11 @@ export default function App() {
         <div className="hero-glow"></div>
         <div className="hero-container">
           <div className="hero-content">
-            <div className="hero-badge">Ingeniero de Sistemas (8vo Semestre)</div>
+            <div className="hero-badge">Ingeniero de Sistemas</div>
             <h1 className="hero-title">Diseñando experiencias frontend y soluciones inteligentes.<br /><span>Creando software de alto nivel.</span></h1>
             <p className="hero-subtitle">Especializado en desarrollo backend, buenas prácticas, seguridad, calidad de software, optimización de bases de datos y entrega confiable de soluciones sólidas.</p>
             <div className="hero-buttons">
-              <a href="#playground" className="btn btn-primary magnetic">Probar API Playground</a>
+              <a href="#playground" className="btn btn-primary magnetic">Probar API </a>
               <a href="#projects" className="btn btn-secondary magnetic">Ver Proyectos</a>
             </div>
             <div className="hero-social">
@@ -597,7 +597,7 @@ export default function App() {
             <div className="edu-card">
               <span className="edu-icon"><i className="fas fa-university"></i></span>
               <h3>Ingeniería en Sistemas y Computación</h3>
-              <p className="edu-meta">Universidad de Caldas (2022 - 2027) | 8vo Semestre</p>
+              <p className="edu-meta">Universidad de Caldas (2022 - 2027)</p>
               <p className="edu-desc">Enfoque en ingeniería de software, arquitectura de sistemas y redes complejas.</p>
             </div>
             <div className="edu-card">

@@ -74,7 +74,7 @@ export default function App() {
       name: 'Brewery Adventure Tour',
       link: 'https://breweryadventuretour.com',
       badge: 'Full Backend',
-      desc: 'API y base de datos de cervecerías con búsqueda radial por geolocalización. Diseñé todo el backend, la gestión completa de Ads (creación, edición y control), la conexión segura con Stripe y el modelado general de la base de datos.',
+      desc: 'Desarrollo de APIs, control y creación de base de datos, optimización de consultas a cervecerías con búsqueda radial por geolocalización. Gestión completa de Ads (creación, edición y control), suscripciones de pago con Stripe y control de usuarios con roles y permisos.',
       features: ['Búsqueda Radial Geográfica', 'Suscripciones Stripe'],
       tech: ['Node.js', 'MongoDB', 'Mongoose', 'Stripe API'],
       iconClass: 'fas fa-beer',
@@ -94,7 +94,7 @@ export default function App() {
       id: 'distoyota',
       name: 'Distoyota',
       link: 'https://distoyota.com',
-      desc: 'Desarrollo web corporativo para el concesionario oficial de Toyota. Creación de landings de alta conversión, optimizaciones de SEO on-page y técnico, automatizaciones de formularios complejas con JetEngine y Zapier, y redacción de manuales de uso.',
+      desc: 'Desarrollo web corporativo para el concesionario oficial de Toyota. Creación de landings de alta conversión, optimizaciones de SEO on-page y técnico, automatizaciones de formularios complejas con JetEngine - Zapier, y redacción de manuales de usuario.',
       features: ['Formularios JetEngine', 'Integración Zapier'],
       tech: ['WordPress', 'JetEngine', 'Zapier', 'SEO Técnico'],
       iconClass: 'fas fa-car',
@@ -106,15 +106,33 @@ export default function App() {
   const timelineData: TimelineItem[] = [
     {
       date: 'Dic 2025 - Actualidad',
-      role: 'Full-Stack & Webmaster',
-      company: 'Ariadna Communications',
+      role: 'Desarrollador & Webmaster',
+      company: 'Ariadna Communications Group | CDI Interactive',
       desc: 'Desarrollo integral de software y optimización técnica corporativa.',
       bullets: [
-        'Desarrollo de APIs RESTful escalables con Node.js, TypeScript, Python y PHP, documentadas con Swagger.',
-        'Refactorización avanzada de consultas y optimización de latencia en bases de datos relacionales y no relacionales.',
-        'Implementación de contenedores con Docker e integración de flujos CI/CD.',
-        'Creación de landing pages avanzadas para Distoyota.com enfocadas en rendimiento, optimización de SEO técnico, creación de manuales, control de contenido y automatización de formularios con JetEngine y Zapier.',
-        'Integración de pagos en Stripe e integraciones avanzadas con LLMs (Modelos de IA).'
+        // --- LOGICA DE NEGOCIO AVANZADA & BACKEND ---
+        'Desarrollo de un motor de simulación financiera compleja para amortizaciones de créditos (sistemas de cuota fija y cuotas flexibles), replicando modelos matemáticos de cálculo de TEA, seguros de desgravamen (con y sin devolución) y multirriesgo.',
+        'Desarrollo de APIs RESTful robustas y escalables utilizando Node.js (Express), TypeScript, Python y PHP, totalmente documentadas con Swagger bajo estándares OpenAPI.',
+        'Diseño de arquitectura limpia para el manejo global de errores y validación robusta de payloads JSON en Express, garantizando la estabilidad y resiliencia del sistema frente a peticiones maliciosas.',
+        'Desarrollo y exportación dinámica de reportes y cronogramas de pago en formato PDF generados directamente en memoria para optimizar el rendimiento y consumo del servidor.',
+        
+        // --- SEGURIDAD & AUTENTICACIÓN ---
+        'Configuración de seguridad y control de acceso basado en roles (RBAC) con Express, gestionando sesiones protegidas mediante cookies y validación estricta de privilegios de usuario (Admin, Superadmin y público).',
+        'Implementación de un sistema seguro de carga y gestión dinámica de archivos multimedia en el servidor local, previniendo vulnerabilidades de Path Traversal y asegurando la deduplicación automática de nombres.',
+        
+        // --- BASES DE DATOS & RENDIMIENTO ---
+        'Diseño y modelado de bases de datos relacionales utilizando Prisma ORM y MySQL, gestionando migraciones seguras y sin pérdida de datos en entornos de producción.',
+        'Refactorización avanzada de consultas, diseño de índices y optimización de latencia en bases de datos relacionales y no relacionales para mejorar los tiempos de respuesta globales.',
+        'Integración de pasarelas de pago (Stripe) e integraciones avanzadas con Modelos de Lenguaje Grande (LLMs) para la automatización y enriquecimiento de flujos en el backend.',
+        
+        // --- DEVOPS & INFRAESTRUCTURA ---
+        'Contenerización de aplicaciones con Docker y configuración de pipelines de integración y despliegue continuo (CI/CD) para automatizar fases de testing y producción.',
+        
+        // --- CMS, AUTOMATIZACIÓN & CONTENIDO ---
+        'Desarrollo de plugins personalizados para WordPress y optimización/modificación estructural de temas existentes para adaptarlos a requerimientos lógicos complejos.',
+        'Creación de estructuras de datos dinámicas y flujos automatizados de formularios mediante el uso avanzado de JetEngine y Zapier para la gestión eficiente de leads corporativos.',
+        'Optimización del rendimiento web (WPO) y de SEO técnico en portales corporativos de alto tráfico (como Distoyota.com), garantizando excelentes métricas de Core Web Vitals.',
+        'Gestión, carga y optimización de arquitectura de contenido multimedia, artículos y productos, asegurando consistencia y velocidad de carga en producción.'
       ]
     },
     {
@@ -123,8 +141,8 @@ export default function App() {
       company: 'Independiente / EBS-WebDev',
       desc: 'Liderando la ingeniería e infraestructura de múltiples aplicaciones a medida.',
       bullets: [
-        'Implementación e integración de plugins certificados de pago locales como Nequi (certificado oficialmente por Nequi) y Place to Pay.',
-        'Desarrollo de widgets de búsqueda personalizados para la centralizadora de Aviajar (aviajarcolombia.com).',
+        'Implementación e integración de plugins certificados de pago locales como Nequi & Place to Pay (Certificaciones oficiales).',
+        'Desarrollo de widgets de búsqueda personalizados para la centralizadora de AViajar Colombia.',
         'Diseño de arquitecturas de red complejas configurando protocolos de enrutamiento OSPF, BGP, RIP, y DHCP en IPv4/IPv6.',
         'Desarrollo de sistemas integrados de telemedicina y tiendas de comercio electrónico (React Native, Node.js, MongoDB).',
         'Automatización avanzada de procesos de negocios utilizando N8N e integraciones ERP Odoo.'
@@ -140,8 +158,9 @@ export default function App() {
         status: 200,
         success: true,
         data: {
-          backend: ['JS/TS', 'PHP (WordPress / Temas / php puro)', 'Python (FastAPI / Django)', 'Java (Spring Boot)', 'PostgreSQL', 'MongoDB', 'MySQL', 'Oracle'],
-          arquitectura: ['Microservicios', 'SOLID', 'DDD (Domain-Driven Design)', 'Clean Architecture', 'Clean Code', 'KISS & DRY'],
+          backend: ['JS/TS', 'PHP', 'Python (FastAPI / Django)', 'Java (Spring Boot)', 'PostgreSQL', 'MongoDB', 'MySQL', 'Oracle'],
+          frontend: ['HTML', 'CSS', 'JavaScript', 'TypeScript', 'JSX', 'TSX', 'React', 'React Native', 'Angular', 'Tailwind CSS'],
+          data_science: ['Machine Learning', 'Redes Neuronales', 'Redes de Datos', 'Análisis de Datos', 'Algoritmos de Predicción', 'Algoritmos de Análisis de Datos', 'Modelado Predictivo'],
           devops_and_tools: ['Docker', 'Git/GitHub/GitLab', 'Stripe API', 'Zapier & N8N', 'SEO Técnico', 'Linux CLI']
         }
       }
@@ -282,8 +301,8 @@ export default function App() {
         <div className="hero-container">
           <div className="hero-content">
             <div className="hero-badge">Ingeniero de Sistemas (8vo Semestre)</div>
-            <h1 className="hero-title">Diseñando arquitecturas robustas.<br /><span>Creando software de alto nivel.</span></h1>
-            <p className="hero-subtitle">Especializado en desarrollo Backend, sistemas distribuidos, optimización de bases de datos y principios SOLID / DDD.</p>
+            <h1 className="hero-title">Diseñando experiencias frontend y soluciones inteligentes.<br /><span>Creando software de alto nivel.</span></h1>
+            <p className="hero-subtitle">Especializado en desarrollo Backend, Frontend, machine learning, análisis de datos, optimización de bases de datos y principios SOLID / DDD.</p>
             <div className="hero-buttons">
               <a href="#playground" className="btn btn-primary magnetic">Probar API Playground</a>
               <a href="#projects" className="btn btn-secondary magnetic">Ver Proyectos</a>
@@ -306,10 +325,10 @@ export default function App() {
               <div className="about-badge">SOBRE MÍ</div>
               <h2 className="section-title">Perfil Técnico</h2>
               <p className="about-text">
-                Como estudiante de Ingeniería en Sistemas y Computación en la Universidad de Caldas, me enfoco en crear arquitecturas backend limpias, eficientes y seguras. Mi enfoque de desarrollo se basa en principios de ingeniería sólidos como <strong>SOLID</strong>, <strong>DDD (Domain-Driven Design)</strong> y <strong>Clean Code</strong>.
+                Como estudiante de Ingeniería en Sistemas y Computación en la Universidad de Caldas, me enfoco en crear soluciones frontend modernas, interfaces responsivas y sistemas backend limpios, eficientes y seguros. Mi enfoque de desarrollo se basa en principios de ingeniería sólidos como <strong>SOLID</strong>, <strong>DDD (Domain-Driven Design)</strong> y <strong>Clean Code</strong>.
               </p>
               <p className="about-text">
-                Cuento con amplia experiencia en la optimización de bases de datos relacionales y no relacionales, infraestructura en la nube, despliegue de microservicios contenerizados y automatizaciones de flujos de trabajo corporativos para impulsar la eficiencia empresarial.
+                Cuento con experiencia en optimización de bases de datos relacionales y no relacionales, machine learning, análisis de datos, redes neuronales, infraestructura en la nube, despliegue de microservicios contenerizados y automatizaciones de flujos de trabajo corporativos para impulsar la eficiencia empresarial.
               </p>
               <div className="languages-box">
                 <span className="lang-tag"><strong>Inglés:</strong> Avanzado</span>
@@ -318,19 +337,19 @@ export default function App() {
             </div>
             <div className="about-cards">
               <div className="profile-feature-card">
-                <div className="feature-icon"><i className="fas fa-layer-group"></i></div>
-                <h3>Sistemas Distribuidos</h3>
-                <p>Diseño e implementación de microservicios robustos y APIs REST de alto rendimiento.</p>
+                <div className="feature-icon"><i className="fas fa-laptop-code"></i></div>
+                <h3>Frontend Moderno</h3>
+                <p>Diseño e implementación de interfaces con HTML, CSS, JS, TS, JSX, TSX, React, Angular, React Native y Tailwind CSS.</p>
+              </div>
+              <div className="profile-feature-card">
+                <div className="feature-icon"><i className="fas fa-brain"></i></div>
+                <h3>Machine Learning & Datos</h3>
+                <p>Análisis de datos, redes neuronales y algoritmos de predicción para resolver problemas con modelos inteligentes.</p>
               </div>
               <div className="profile-feature-card">
                 <div className="feature-icon"><i className="fas fa-database"></i></div>
-                <h3>Optimización de Latencia</h3>
-                <p>Refactorización de consultas y modelado de datos escalables (SQL & NoSQL).</p>
-              </div>
-              <div className="profile-feature-card">
-                <div className="feature-icon"><i className="fas fa-shield-alt"></i></div>
-                <h3>Seguridad de la Información</h3>
-                <p>Certificaciones en Ciberseguridad e ISO 27001 aplicadas al desarrollo de software.</p>
+                <h3>Datos & Rendimiento</h3>
+                <p>Optimización de consultas, modelado de datos escalables y performance en aplicaciones distribuidas.</p>
               </div>
             </div>
           </div>
@@ -516,9 +535,9 @@ export default function App() {
                 <span>Node.js</span>
                 <span>Express</span>
                 <span>TypeScript</span>
-                <span>PHP (WordPress / Temas)</span>
-                <span>Python (FastAPI / Django)</span>
-                <span>Java (Spring Boot)</span>
+                <span>PHP</span>
+                <span>Python3</span>
+                <span>Java</span>
                 <span>PostgreSQL</span>
                 <span>MongoDB</span>
                 <span>MySQL</span>
@@ -529,16 +548,34 @@ export default function App() {
             </div>
 
             <div className="skills-cat-card">
-              <h3>Arquitectura & Patrones</h3>
+              <h3>Frontend</h3>
               <div className="skill-tags-group">
-                <span>Microservicios</span>
-                <span>SOLID Principles</span>
-                <span>DDD (Domain-Driven Design)</span>
-                <span>Clean Architecture</span>
-                <span>Clean Code</span>
-                <span>KISS & DRY</span>
-                <span>Design Patterns (Factory / Singleton)</span>
-                <span>Monolítico Modular</span>
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+                <span>TypeScript</span>
+                <span>JSX</span>
+                <span>TSX</span>
+                <span>React</span>
+                <span>React Native</span>
+                <span>Angular</span>
+                <span>Tailwind CSS</span>
+              </div>
+            </div>
+
+            <div className="skills-cat-card">
+              <h3>Machine Learning & Análisis de Datos</h3>
+              <div className="skill-tags-group">
+                <span>Machine Learning</span>
+                <span>Redes Neuronales</span>
+                <span>Redes de Datos</span>
+                <span>Análisis de Datos</span>
+                <span>Algoritmos de Análisis de Datos</span>
+                <span>Algoritmos de Predicción</span>
+                <span>Modelado Predictivo</span>
+                <span>Python</span>
+                <span>R</span>
+                <span>Pandas / NumPy</span>
               </div>
             </div>
 

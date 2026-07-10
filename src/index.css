@@ -82,41 +82,6 @@ body {
   box-sizing: border-box;
 }
 
-/* Custom Interactive Cursor (Desktop Only) */
-.custom-cursor {
-  width: 24px;
-  height: 24px;
-  border: 1.5px solid var(--text-primary);
-  border-radius: 50%;
-  position: fixed;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  z-index: 9999;
-  transition:
-    width 0.2s,
-    height 0.2s,
-    background-color 0.2s,
-    border-color 0.2s;
-  mix-blend-mode: difference;
-}
-
-.custom-cursor-dot {
-  width: 4px;
-  height: 4px;
-  background-color: var(--text-primary);
-  border-radius: 50%;
-  position: fixed;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  z-index: 9999;
-}
-
-.custom-cursor.hovered {
-  width: 48px;
-  height: 48px;
-  background-color: rgba(255, 255, 255, 0.1);
-  border-color: transparent;
-}
 
 /* Floating Navigation - Apple Island */
 .navbar {
@@ -1130,11 +1095,7 @@ section {
 }
 
 @media (max-width: 768px) {
-  /* Disable custom cursor on touch devices */
-  .custom-cursor,
-  .custom-cursor-dot {
-    display: none !important;
-  }
+
 
   section {
     padding: 80px 0;

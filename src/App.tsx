@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 
 // --- Types & Interfaces ---
 interface Project {
@@ -35,8 +35,6 @@ export default function App() {
   const [terminalLoading, setTerminalLoading] = useState<boolean>(false);
 
   // --- Refs ---
-  const cursorRef = useRef<HTMLDivElement>(null);
-  const cursorDotRef = useRef<HTMLDivElement>(null);
 
   // --- Projects Data (Bilingual) ---
   const projectsEs: Project[] = [
@@ -289,25 +287,6 @@ export default function App() {
     localStorage.setItem('theme', theme);
   }, [theme]);
 
-  useEffect(() => {
-    // Custom cursor and magnetic effect (Only on desktop)
-    const handleMouseMove = (e: MouseEvent) => {
-      if (cursorRef.current && cursorDotRef.current) {
-        cursorRef.current.style.left = `${e.clientX}px`;
-        cursorRef.current.style.top = `${e.clientY}px`;
-        cursorDotRef.current.style.left = `${e.clientX}px`;
-        cursorDotRef.current.style.top = `${e.clientY}px`;
-      }
-    };
-
-    if (window.innerWidth > 768) {
-      document.addEventListener('mousemove', handleMouseMove);
-    }
-
-    return () => {
-      document.removeEventListener('mousemove', handleMouseMove);
-    };
-  }, []);
 
   // --- Theme & Language Toggles ---
   const toggleTheme = () => {
@@ -343,9 +322,7 @@ export default function App() {
 
   return (
     <>
-      {/* Custom Cursor */}
-      <div className="custom-cursor" ref={cursorRef}></div>
-      <div className="custom-cursor-dot" ref={cursorDotRef}></div>
+
 
       {/* Navigation */}
       <nav className="navbar">

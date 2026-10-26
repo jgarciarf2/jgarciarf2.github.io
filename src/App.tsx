@@ -1,5 +1,17 @@
 import React, { useState, useEffect } from 'react';
 
+const NAV_ITEMS = [
+  { id: 'home', es: 'Inicio', en: 'Home' },
+  { id: 'about', es: 'Perfil', en: 'Profile' },
+  { id: 'playground', es: 'API', en: 'API' },
+  { id: 'experience', es: 'Experiencia', en: 'Experience' },
+  { id: 'projects', es: 'Proyectos', en: 'Projects' },
+  { id: 'skills', es: 'Habilidades', en: 'Skills' },
+  { id: 'contact', es: 'Contacto', en: 'Contact' },
+] as const;
+
+const BULLETS_COLLAPSED = 5;
+
 // --- Types & Interfaces ---
 interface Project {
   id: string;
@@ -7,6 +19,7 @@ interface Project {
   link: string;
   demoLink?: string;
   badge?: string;
+  maintenance?: boolean;
   desc: string;
   features: string[];
   tech: string[];
@@ -33,6 +46,9 @@ export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const [terminalTab, setTerminalTab] = useState<'skills' | 'contacto'>('skills');
   const [terminalLoading, setTerminalLoading] = useState<boolean>(false);
+  const [scrolled, setScrolled] = useState<boolean>(false);
+  const [activeSection, setActiveSection] = useState<string>('home');
+  const [expanded, setExpanded] = useState<Record<number, boolean>>({});
 
   // --- Refs ---
 
@@ -51,11 +67,12 @@ export default function App() {
     },
     {
       id: 'simulador-confianza',
+      maintenance: true,
       name: 'Simulador Confianza',
       link: 'https://simulador.confianza.pe/simulador-credito',
       badge: '100% Backend',
       desc: 'Desarrollo backend para el simulador oficial de créditos de Financiera Confianza en Perú. Responsable de la lógica de autenticación segura por cookies corporativas, protección de endpoints y cálculo de desgravamen con/sin devolución.',
-      features: ['Autenticación por Cookies', 'Adaptación y aplicación de cálculos matemáticos de seguros e intereses'],
+      features: ['Autenticación por Cookies', 'Cálculo de seguros e intereses'],
       tech: ['Express', 'TypeScript', 'Prisma ORM', 'PostgreSQL'],
       iconClass: 'fas fa-calculator',
       thumbnail: '/resources/project-simulador-confianza.png'
@@ -117,11 +134,12 @@ export default function App() {
     },
     {
       id: 'simulador-confianza',
+      maintenance: true,
       name: 'Confianza Simulator',
       link: 'https://simulador.confianza.pe/simulador-credito',
       badge: '100% Backend',
       desc: 'Backend development for the official credit simulator of Financiera Confianza in Peru. Responsible for secure authentication logic via corporate cookies, endpoint protection, and desgravamen calculation with/without devolution.',
-      features: ['Cookie Authentication', 'Adaptación y aplicación de cálculos matemáticos de seguros e intereses'],
+      features: ['Cookie Authentication', 'Insurance & interest calculation logic'],
       tech: ['Express', 'TypeScript', 'Prisma ORM', 'PostgreSQL'],
       iconClass: 'fas fa-calculator',
       thumbnail: '/resources/project-simulador-confianza.png'
@@ -287,6 +305,44 @@ export default function App() {
     localStorage.setItem('theme', theme);
   }, [theme]);
 
+  useEffect(() => {
+    document.documentElement.lang = lang;
+  }, [lang]);
+
+  // Navbar state on scroll
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  // Scroll reveal + scrollspy
+  useEffect(() => {
+    const reveal = new IntersectionObserver(
+      (entries) => entries.forEach((en) => {
+        if (en.isIntersecting) {
+          en.target.classList.add('in');
+          reveal.unobserve(en.target);
+        }
+      }),
+      { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+    );
+    document.querySelectorAll('.reveal').forEach((el) => reveal.observe(el));
+
+    const spy = new IntersectionObserver(
+      (entries) => entries.forEach((en) => {
+        if (en.isIntersecting) setActiveSection(en.target.id);
+      }),
+      { rootMargin: '-45% 0px -50% 0px' }
+    );
+    NAV_ITEMS.forEach(({ id }) => {
+      const el = document.getElementById(id);
+      if (el) spy.observe(el);
+    });
+    return () => { reveal.disconnect(); spy.disconnect(); };
+  }, []);
+
 
   // --- Theme & Language Toggles ---
   const toggleTheme = () => {
@@ -304,11 +360,12 @@ export default function App() {
   // --- Contact Form Submission ---
   const handleContactSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    alert(lang === 'es' 
-      ? '¡Gracias por tu mensaje! Me pondré en contacto contigo a la brevedad.' 
-      : 'Thank you for your message! I will get in touch with you shortly.'
-    );
-    (e.target as HTMLFormElement).reset();
+    const f = new FormData(e.currentTarget);
+    const body = `${f.get('message')}
+
+— ${f.get('name')} (${f.get('email')})`;
+    window.location.href = `mailto:jgarciarf216@gmail.com?subject=${encodeURIComponent(String(f.get('subject')))}&body=${encodeURIComponent(body)}`;
+    e.currentTarget.reset();
   };
 
   // --- Terminal Tab Selection ---
@@ -325,57 +382,33 @@ export default function App() {
 
 
       {/* Navigation */}
-      <nav className="navbar">
+      <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
         <div className="nav-container">
           <div className="nav-logo">
             <span className="logo-text">jgarciarf2</span>
           </div>
           <ul className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
-            <li className="nav-item">
-              <a href="#home" className="nav-link magnetic" onClick={() => setIsMenuOpen(false)}>
-                {lang === 'es' ? 'Inicio' : 'Home'}
-              </a>
-            </li>
-            <li className="nav-item">
-              <a href="#about" className="nav-link magnetic" onClick={() => setIsMenuOpen(false)}>
-                {lang === 'es' ? 'Perfil' : 'Profile'}
-              </a>
-            </li>
-            <li className="nav-item">
-              <a href="#playground" className="nav-link magnetic" onClick={() => setIsMenuOpen(false)}>
-                {lang === 'es' ? 'API Playground' : 'API Playground'}
-              </a>
-            </li>
-            <li className="nav-item">
-              <a href="#experience" className="nav-link magnetic" onClick={() => setIsMenuOpen(false)}>
-                {lang === 'es' ? 'Experiencia' : 'Experience'}
-              </a>
-            </li>
-            <li className="nav-item">
-              <a href="#projects" className="nav-link magnetic" onClick={() => setIsMenuOpen(false)}>
-                {lang === 'es' ? 'Proyectos' : 'Projects'}
-              </a>
-            </li>
-            <li className="nav-item">
-              <a href="#skills" className="nav-link magnetic" onClick={() => setIsMenuOpen(false)}>
-                {lang === 'es' ? 'Habilidades' : 'Skills'}
-              </a>
-            </li>
-            <li className="nav-item">
-              <a href="#contact" className="nav-link magnetic" onClick={() => setIsMenuOpen(false)}>
-                {lang === 'es' ? 'Contacto' : 'Contact'}
-              </a>
-            </li>
+            {NAV_ITEMS.map((item) => (
+              <li className="nav-item" key={item.id}>
+                <a
+                  href={`#${item.id}`}
+                  className={`nav-link ${activeSection === item.id ? 'active' : ''}`}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {item[lang]}
+                </a>
+              </li>
+            ))}
           </ul>
           <div className="nav-actions">
-            <button onClick={toggleLanguage} className="lang-toggle-btn magnetic" aria-label="Cambiar idioma" style={{ marginRight: '10px', background: 'transparent', border: '1px solid var(--border-color)', color: 'var(--text-primary)', padding: '6px 12px', borderRadius: 'var(--radius-md)', fontSize: '0.8rem', cursor: 'pointer', fontWeight: 600 }}>
+            <button onClick={toggleLanguage} className="lang-toggle-btn" aria-label="Cambiar idioma">
               {lang === 'es' ? 'EN' : 'ES'}
             </button>
-            <button onClick={toggleTheme} className="theme-toggle-btn magnetic" aria-label="Cambiar tema">
+            <button onClick={toggleTheme} className="theme-toggle-btn" aria-label="Cambiar tema">
               <i className="fas fa-sun icon-sun"></i>
               <i className="fas fa-moon icon-moon"></i>
             </button>
-            <div className={`hamburger ${isMenuOpen ? 'active' : ''}`} onClick={() => setIsMenuOpen(!isMenuOpen)}>
+            <div className={`hamburger ${isMenuOpen ? 'active' : ''}`} onClick={() => setIsMenuOpen(!isMenuOpen)} role="button" aria-label="Menu" tabIndex={0}>
               <span className="bar"></span>
               <span className="bar"></span>
               <span className="bar"></span>
@@ -388,7 +421,7 @@ export default function App() {
       <section id="home" className="hero">
         <div className="hero-glow"></div>
         <div className="hero-container">
-          <div className="hero-content">
+          <div className="hero-content reveal">
             <div className="hero-badge">{lang === 'es' ? 'Ingeniero de Sistemas' : 'Systems Engineer'}</div>
             <h1 className="hero-title">
               {lang === 'es' ? (
@@ -403,14 +436,14 @@ export default function App() {
                 : 'Specializing in backend development, best practices, security, software quality, database optimization, and reliable delivery of solid solutions.'}
             </p>
             <div className="hero-buttons">
-              <a href="#playground" className="btn btn-primary magnetic">
+              <a href="#playground" className="btn btn-primary">
                 {lang === 'es' ? 'Probar API' : 'Try API'}
               </a>
-              <a href="#projects" className="btn btn-secondary magnetic">
+              <a href="#projects" className="btn btn-secondary">
                 {lang === 'es' ? 'Ver Proyectos' : 'View Projects'}
               </a>
-              <a href="/resources/CV.pdf" download="Juan_Garcia_CV.pdf" className="btn btn-secondary magnetic" style={{ borderColor: 'var(--accent)', color: 'var(--accent)' }}>
-                <i className="fas fa-download" style={{ marginRight: '8px' }}></i> {lang === 'es' ? 'Descargar CV' : 'Download CV'}
+              <a href="/resources/CV.pdf" download="Juan_Garcia_CV.pdf" className="btn btn-ghost-accent">
+                <i className="fas fa-download"></i> {lang === 'es' ? 'Descargar CV' : 'Download CV'}
               </a>
             </div>
           </div>
@@ -421,7 +454,7 @@ export default function App() {
       <section id="about" className="about">
         <div className="container">
           <div className="about-grid">
-            <div className="about-info">
+            <div className="about-info reveal">
               <div className="about-badge">{lang === 'es' ? 'SOBRE MÍ' : 'ABOUT ME'}</div>
               <h2 className="section-title">{lang === 'es' ? 'Perfil Técnico' : 'Technical Profile'}</h2>
               <p className="about-text">
@@ -455,7 +488,7 @@ export default function App() {
                 </span>
               </div>
             </div>
-            <div className="about-cards">
+            <div className="about-cards reveal">
               <div className="profile-feature-card">
                 <div className="feature-icon"><i className="fas fa-server"></i></div>
                 <h3>{lang === 'es' ? 'Backend Sólido' : 'Solid Backend'}</h3>
@@ -491,7 +524,7 @@ export default function App() {
       {/* REST API Playground Section */}
       <section id="playground" className="playground">
         <div className="container">
-          <div className="section-header">
+          <div className="section-header reveal">
             <div className="about-badge">{lang === 'es' ? 'DEMO BACKEND' : 'BACKEND DEMO'}</div>
             <h2 className="section-title">REST API Playground</h2>
             <p className="section-subtitle">
@@ -501,7 +534,7 @@ export default function App() {
             </p>
           </div>
 
-          <div className="terminal-container">
+          <div className="terminal-container reveal">
             <div className="terminal-header">
               <div className="terminal-dots">
                 <span className="dot red"></span>
@@ -513,13 +546,13 @@ export default function App() {
             <div className="terminal-body">
               <div className="terminal-tabs">
                 <button
-                  className={`terminal-tab magnetic ${terminalTab === 'skills' ? 'active' : ''}`}
+                  className={`terminal-tab ${terminalTab === 'skills' ? 'active' : ''}`}
                   onClick={() => handleTerminalTabClick('skills')}
                 >
                   <span className="method get">GET</span> {lang === 'es' ? '/habilidades' : '/skills'}
                 </button>
                 <button
-                  className={`terminal-tab magnetic ${terminalTab === 'contacto' ? 'active' : ''}`}
+                  className={`terminal-tab ${terminalTab === 'contacto' ? 'active' : ''}`}
                   onClick={() => handleTerminalTabClick('contacto')}
                 >
                   <span className="method get">GET</span> {lang === 'es' ? '/contacto' : '/contact'}
@@ -548,7 +581,7 @@ export default function App() {
       {/* Experience Section */}
       <section id="experience" className="experience">
         <div className="container">
-          <div className="section-header">
+          <div className="section-header reveal">
             <div className="about-badge">{lang === 'es' ? 'TRAYECTORIA' : 'JOURNEY'}</div>
             <h2 className="section-title">{lang === 'es' ? 'Experiencia Profesional' : 'Professional Experience'}</h2>
             <p className="section-subtitle">
@@ -560,7 +593,7 @@ export default function App() {
 
           <div className="timeline">
             {timelineData.map((item, idx) => (
-              <div className="timeline-item" key={idx}>
+              <div className="timeline-item reveal" key={idx}>
                 <div className="timeline-dot"></div>
                 <div className="timeline-date">{item.date}</div>
                 <div className="timeline-content">
@@ -568,10 +601,21 @@ export default function App() {
                   <h3>{item.company}</h3>
                   <p className="timeline-desc">{item.desc}</p>
                   <ul className="timeline-bullets">
-                    {item.bullets.map((bullet, bIdx) => (
+                    {(expanded[idx] ? item.bullets : item.bullets.slice(0, BULLETS_COLLAPSED)).map((bullet, bIdx) => (
                       <li key={bIdx}>{bullet}</li>
                     ))}
                   </ul>
+                  {item.bullets.length > BULLETS_COLLAPSED && (
+                    <button
+                      className="timeline-toggle"
+                      onClick={() => setExpanded((prev) => ({ ...prev, [idx]: !prev[idx] }))}
+                      aria-expanded={!!expanded[idx]}
+                    >
+                      {expanded[idx]
+                        ? (lang === 'es' ? 'Ver menos' : 'Show less')
+                        : (lang === 'es' ? `Ver ${item.bullets.length - BULLETS_COLLAPSED} más` : `Show ${item.bullets.length - BULLETS_COLLAPSED} more`)}
+                    </button>
+                  )}
                 </div>
               </div>
             ))}
@@ -582,7 +626,7 @@ export default function App() {
       {/* Projects Section */}
       <section id="projects" className="projects">
         <div className="container">
-          <div className="section-header">
+          <div className="section-header reveal">
             <div className="about-badge">{lang === 'es' ? 'CASOS DE ÉXITO' : 'PORTFOLIO'}</div>
             <h2 className="section-title">{lang === 'es' ? 'Proyectos Destacados' : 'Featured Projects'}</h2>
             <p className="section-subtitle">
@@ -595,11 +639,16 @@ export default function App() {
           <div className="projects-grid">
             {projects.map((project) => (
               <div
-                className="project-card"
+                className="project-card reveal"
                 key={project.id}
               >
                 <div className="project-card-inner">
                   <div className="project-thumbnail-container">
+                    {project.maintenance && (
+                      <div className="project-ribbon" role="status">
+                        <span>{lang === 'es' ? 'En Mantenimiento' : 'Under Maintenance'}</span>
+                      </div>
+                    )}
                     <img
                       src={project.thumbnail}
                       alt={project.name}
@@ -631,9 +680,8 @@ export default function App() {
                           href={project.demoLink}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="btn-project magnetic"
-                          style={{ marginRight: '20px' }}
-                        >
+                          className="btn-project"
+                                                  >
                           <i className="fas fa-external-link-alt"></i> {lang === 'es' ? 'Demo en Vivo' : 'Live Demo'}
                         </a>
                       )}
@@ -641,7 +689,7 @@ export default function App() {
                         href={project.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="btn-project magnetic"
+                        className="btn-project"
                       >
                         {project.link.includes('github.com') ? (
                           <><i className="fab fa-github"></i> {lang === 'es' ? 'Repositorio' : 'Repository'}</>
@@ -661,7 +709,7 @@ export default function App() {
       {/* Skills Section */}
       <section id="skills" className="skills">
         <div className="container">
-          <div className="section-header">
+          <div className="section-header reveal">
             <div className="about-badge">{lang === 'es' ? 'CAPACIDADES' : 'SKILLS'}</div>
             <h2 className="section-title">{lang === 'es' ? 'Habilidades Técnicas' : 'Technical Skills'}</h2>
             <p className="section-subtitle">
@@ -672,56 +720,56 @@ export default function App() {
           </div>
 
           <div className="skills-grid-wrapper">
-            <div className="skills-cat-card">
+            <div className="skills-cat-card reveal">
               <h3>Backend & Frontend</h3>
               <div className="skill-tags-group">
-                <span><i className="fab fa-node-js" style={{ marginRight: '6px', color: '#68a063' }}></i> Node.js</span>
-                <span><i className="fas fa-server" style={{ marginRight: '6px', color: '#808080' }}></i> Express</span>
-                <span><i className="fab fa-php" style={{ marginRight: '6px', color: '#777bb4' }}></i> PHP</span>
-                <span><i className="fab fa-python" style={{ marginRight: '6px', color: '#3776ab' }}></i> Python</span>
-                <span><i className="fab fa-java" style={{ marginRight: '6px', color: '#ea2d2e' }}></i> Java</span>
-                <span><i className="fab fa-html5" style={{ marginRight: '6px', color: '#e34f26' }}></i> HTML</span>
-                <span><i className="fab fa-css3-alt" style={{ marginRight: '6px', color: '#1572b6' }}></i> CSS</span>
-                <span><i className="fab fa-js" style={{ marginRight: '6px', color: '#f7df1e' }}></i> JavaScript</span>
-                <span><i className="fab fa-js" style={{ marginRight: '6px', color: '#3178c6' }}></i> TypeScript</span>
-                <span><i className="fas fa-code" style={{ marginRight: '6px', color: '#61dafb' }}></i> JSX</span>
-                <span><i className="fas fa-code" style={{ marginRight: '6px', color: '#3178c6' }}></i> TSX</span>
-                <span><i className="fab fa-react" style={{ marginRight: '6px', color: '#61dafb' }}></i> React</span>
-                <span><i className="fab fa-react" style={{ marginRight: '6px', color: '#61dafb' }}></i> React Native</span>
-                <span><i className="fab fa-angular" style={{ marginRight: '6px', color: '#dd0031' }}></i> Angular</span>
-                <span><i className="fas fa-search" style={{ marginRight: '6px', color: '#4285f4' }}></i> {lang === 'es' ? 'SEO Técnico' : 'Technical SEO'}</span>
-                <span><i className="fab fa-css3" style={{ marginRight: '6px', color: '#38bdf8' }}></i> Tailwind CSS</span>
+                <span><i className="fab fa-node-js"></i> Node.js</span>
+                <span><i className="fas fa-server"></i> Express</span>
+                <span><i className="fab fa-php"></i> PHP</span>
+                <span><i className="fab fa-python"></i> Python</span>
+                <span><i className="fab fa-java"></i> Java</span>
+                <span><i className="fab fa-html5"></i> HTML</span>
+                <span><i className="fab fa-css3-alt"></i> CSS</span>
+                <span><i className="fab fa-js"></i> JavaScript</span>
+                <span><i className="fab fa-js"></i> TypeScript</span>
+                <span><i className="fas fa-code"></i> JSX</span>
+                <span><i className="fas fa-code"></i> TSX</span>
+                <span><i className="fab fa-react"></i> React</span>
+                <span><i className="fab fa-react"></i> React Native</span>
+                <span><i className="fab fa-angular"></i> Angular</span>
+                <span><i className="fas fa-search"></i> {lang === 'es' ? 'SEO Técnico' : 'Technical SEO'}</span>
+                <span><i className="fab fa-css3"></i> Tailwind CSS</span>
               </div>
             </div>
 
-            <div className="skills-cat-card">
+            <div className="skills-cat-card reveal">
               <h3>{lang === 'es' ? 'Machine Learning & Datos' : 'Machine Learning & Data'}</h3>
               <div className="skill-tags-group">
-                <span><i className="fas fa-brain" style={{ marginRight: '6px', color: '#ff6f00' }}></i> Machine Learning</span>
-                <span><i className="fas fa-network-wired" style={{ marginRight: '6px', color: '#9c27b0' }}></i> {lang === 'es' ? 'Redes Neuronales' : 'Neural Networks'}</span>
-                <span><i className="fas fa-chart-line" style={{ marginRight: '6px', color: '#00bcd4' }}></i> {lang === 'es' ? 'Análisis y Predicción' : 'Analysis & Prediction'}</span>
-                <span><i className="fab fa-python" style={{ marginRight: '6px', color: '#3776ab' }}></i> Python</span>
-                <span><i className="fas fa-calculator" style={{ marginRight: '6px', color: '#1f425f' }}></i> Pandas / NumPy</span>
+                <span><i className="fas fa-brain"></i> Machine Learning</span>
+                <span><i className="fas fa-network-wired"></i> {lang === 'es' ? 'Redes Neuronales' : 'Neural Networks'}</span>
+                <span><i className="fas fa-chart-line"></i> {lang === 'es' ? 'Análisis y Predicción' : 'Analysis & Prediction'}</span>
+                <span><i className="fab fa-python"></i> Python</span>
+                <span><i className="fas fa-calculator"></i> Pandas / NumPy</span>
               </div>
             </div>
 
-            <div className="skills-cat-card">
+            <div className="skills-cat-card reveal">
               <h3>Databases & DevOps</h3>
               <div className="skill-tags-group">
-                <span><i className="fas fa-database" style={{ marginRight: '6px', color: '#336791' }}></i> PostgreSQL</span>
-                <span><i className="fas fa-leaf" style={{ marginRight: '6px', color: '#47a248' }}></i> MongoDB</span>
-                <span><i className="fas fa-database" style={{ marginRight: '6px', color: '#00758f' }}></i> MySQL</span>
-                <span><i className="fas fa-database" style={{ marginRight: '6px', color: '#f80000' }}></i> Oracle</span>
-                <span><i className="fas fa-project-diagram" style={{ marginRight: '6px', color: '#2b3547' }}></i> Prisma ORM</span>
-                <span><i className="fas fa-network-wired" style={{ marginRight: '6px', color: '#880000' }}></i> Mongoose</span>
-                <span><i className="fab fa-git-alt" style={{ marginRight: '6px', color: '#f05032' }}></i> Git & GitHub / GitLab</span>
-                <span><i className="fab fa-docker" style={{ marginRight: '6px', color: '#2496ed' }}></i> Docker</span>
-                <span><i className="fab fa-stripe-s" style={{ marginRight: '6px', color: '#635bff' }}></i> Stripe</span>
-                <span><i className="fas fa-bolt" style={{ marginRight: '6px', color: '#ff4a00' }}></i> Zapier & N8N</span>
-                <span><i className="fas fa-file-alt" style={{ marginRight: '6px', color: '#85ea2d' }}></i> Swagger Docs</span>
-                <span><i className="fas fa-server" style={{ marginRight: '6px', color: '#607d8b' }}></i> {lang === 'es' ? 'Adm. Servidores' : 'Server Admin'}</span>
-                <span><i className="fab fa-linux" style={{ marginRight: '6px', color: '#000000' }}></i> Linux CLI</span>
-                <span><i className="fas fa-route" style={{ marginRight: '6px', color: '#e91e63' }}></i> {lang === 'es' ? 'Redes (OSPF/BGP)' : 'Networking (OSPF/BGP)'}</span>
+                <span><i className="fas fa-database"></i> PostgreSQL</span>
+                <span><i className="fas fa-leaf"></i> MongoDB</span>
+                <span><i className="fas fa-database"></i> MySQL</span>
+                <span><i className="fas fa-database"></i> Oracle</span>
+                <span><i className="fas fa-project-diagram"></i> Prisma ORM</span>
+                <span><i className="fas fa-network-wired"></i> Mongoose</span>
+                <span><i className="fab fa-git-alt"></i> Git & GitHub / GitLab</span>
+                <span><i className="fab fa-docker"></i> Docker</span>
+                <span><i className="fab fa-stripe-s"></i> Stripe</span>
+                <span><i className="fas fa-bolt"></i> Zapier & N8N</span>
+                <span><i className="fas fa-file-alt"></i> Swagger Docs</span>
+                <span><i className="fas fa-server"></i> {lang === 'es' ? 'Adm. Servidores' : 'Server Admin'}</span>
+                <span><i className="fab fa-linux"></i> Linux CLI</span>
+                <span><i className="fas fa-route"></i> {lang === 'es' ? 'Redes (OSPF/BGP)' : 'Networking (OSPF/BGP)'}</span>
               </div>
             </div>
           </div>
@@ -731,7 +779,7 @@ export default function App() {
       {/* Education Section */}
       <section id="education" className="education">
         <div className="container">
-          <div className="section-header">
+          <div className="section-header reveal">
             <div className="about-badge">{lang === 'es' ? 'FORMACIÓN' : 'EDUCATION'}</div>
             <h2 className="section-title">{lang === 'es' ? 'Educación & Certificaciones' : 'Education & Certifications'}</h2>
             <p className="section-subtitle">
@@ -742,7 +790,7 @@ export default function App() {
           </div>
 
           <div className="education-grid">
-            <div className="edu-card">
+            <div className="edu-card reveal">
               <span className="edu-icon"><i className="fas fa-university"></i></span>
               <h3>{lang === 'es' ? 'Ingeniería en Sistemas y Computación' : 'Systems Engineering & Computer Science'}</h3>
               <p className="edu-meta">Universidad de Caldas (2022 - 2027)</p>
@@ -752,7 +800,7 @@ export default function App() {
                   : 'Focus on software engineering, systems architecture, and complex networks.'}
               </p>
             </div>
-            <div className="edu-card">
+            <div className="edu-card reveal">
               <span className="edu-icon"><i className="fas fa-user-shield"></i></span>
               <h3>{lang === 'es' ? 'Bootcamp en Ciberseguridad' : 'Cybersecurity Bootcamp'}</h3>
               <p className="edu-meta">MinTIC / Universidad de Caldas</p>
@@ -762,7 +810,7 @@ export default function App() {
                   : 'Specialization in vulnerability analysis, defensive security, and audits.'}
               </p>
             </div>
-            <div className="edu-card">
+            <div className="edu-card reveal">
               <span className="edu-icon"><i className="fas fa-file-contract-agreement"></i></span>
               <h3>{lang === 'es' ? 'Workshop ISO 27001' : 'Workshop ISO 27001'}</h3>
               <p className="edu-meta">{lang === 'es' ? 'Seguridad de la Información' : 'Information Security'}</p>
@@ -780,7 +828,7 @@ export default function App() {
       <section id="contact" className="contact">
         <div className="container">
           <div className="contact-grid">
-            <div className="contact-header-box">
+            <div className="contact-header-box reveal">
               <div className="about-badge">{lang === 'es' ? 'CONTACTAR' : 'CONTACT'}</div>
               <h2 className="section-title">{lang === 'es' ? '¿Tienes un proyecto en mente?' : 'Have a project in mind?'}</h2>
               <p className="section-subtitle">
@@ -794,7 +842,7 @@ export default function App() {
                   <i className="fas fa-envelope"></i>
                   <div>
                     <span>Email</span>
-                    <a href="mailto:jgarciarf216@gmail.com" className="magnetic">jgarciarf216@gmail.com</a>
+                    <a href="mailto:jgarciarf216@gmail.com">jgarciarf216@gmail.com</a>
                   </div>
                 </div>
                 <div className="c-info-item">
@@ -807,7 +855,7 @@ export default function App() {
               </div>
             </div>
 
-            <div className="contact-form-box">
+            <div className="contact-form-box reveal">
               <form className="contact-form" onSubmit={handleContactSubmit}>
                 <div className="form-row">
                   <div className="form-group">
@@ -827,7 +875,7 @@ export default function App() {
                   <label htmlFor="message">{lang === 'es' ? 'Mensaje' : 'Message'}</label>
                   <textarea id="message" rows={4} placeholder={lang === 'es' ? 'Tu Mensaje' : 'Your Message'} required></textarea>
                 </div>
-                <button type="submit" className="btn btn-primary magnetic">
+                <button type="submit" className="btn btn-primary">
                   {lang === 'es' ? 'Enviar Mensaje' : 'Send Message'}
                 </button>
               </form>
@@ -843,9 +891,9 @@ export default function App() {
             <span className="footer-logo">jgarciarf2</span>
             <p>&copy; 2026. {lang === 'es' ? 'Todos los derechos reservados. Diseñado con estilo minimalista.' : 'All rights reserved. Designed with a minimalist style.'}</p>
             <div className="footer-social-links">
-              <a href="mailto:jgarciarf216@gmail.com" className="magnetic"><i className="fas fa-envelope"></i></a>
-              <a href="https://github.com/jgarciarf2" className="magnetic" target="_blank" rel="noopener noreferrer"><i className="fab fa-github"></i></a>
-              <a href="https://linkedin.com/in/jgarciarf2" className="magnetic" target="_blank" rel="noopener noreferrer"><i className="fab fa-linkedin"></i></a>
+              <a href="mailto:jgarciarf216@gmail.com" aria-label="Email"><i className="fas fa-envelope"></i></a>
+              <a href="https://github.com/jgarciarf2" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><i className="fab fa-github"></i></a>
+              <a href="https://linkedin.com/in/jgarciarf2" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i className="fab fa-linkedin"></i></a>
             </div>
           </div>
         </div>
